@@ -8,9 +8,8 @@ const router = express.Router()
 router.get('/:id', (request, response) => {
     const user_id = request.params.id
     const gtdObj = searchByIDUser(user_id)
-    const inbox = gtdObj.inbox
-    console.log(inbox)
-    if (inbox != null) {
+    if (gtdObj != null) {
+        const inbox = gtdObj.inbox
         response.status(200).json({
             data: inbox,
             message: 'success'
