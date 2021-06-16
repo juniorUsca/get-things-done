@@ -29,18 +29,19 @@ router.get('/:user_id/:id', (request, response) => {
     const id = request.params.id
     const user_id = request.params.user_id
     const gtdObj = searchByIDUser(user_id)
-    const inboxObj = searchByIDInbox(gtdObj.inbox, id)
-    if (inboxObj !== null) {
-        response.status(200).json({
-            data: inboxObj,
-            message: 'success'
-        })
-    } else {
-        response.status(404).json({
-            data: null,
-            message: 'error'
-        })
+    if (gtdObj !== null) {
+        const inboxObj = searchByIDInbox(gtdObj.inbox, id)
+        if (inboxObj !== null) {
+            response.status(200).json({
+                data: inboxObj,
+                message: 'success'
+            })
+        }
     }
+    response.status(404).json({
+        data: null,
+        message: 'error'
+    })
 })
 
 // crear inbox
