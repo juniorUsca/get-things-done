@@ -32,7 +32,7 @@ router.get('/:user_id/:id', (request, response) => {
     if (gtdObj !== null) {
         const inboxObj = searchByIDInbox(gtdObj.inbox, id)
         if (inboxObj !== null) {
-            response.status(200).json({
+            return response.status(200).json({
                 data: inboxObj,
                 message: 'success'
             })
