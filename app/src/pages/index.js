@@ -87,7 +87,7 @@ const Login = ()=>{
             <span>or use your email for registration</span>
             <input type="text" placeholder="Name" />
             <input type="email" id="email" placeholder="Email" />
-            <input type="password" if="password" placeholder="Password" />
+            <input type="password" id="password" placeholder="Password" />
             <button>Sign Up</button>
             </form>
           </div>
