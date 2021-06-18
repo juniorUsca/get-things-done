@@ -106,7 +106,7 @@ router.delete('/:user_id/:id', (request, response) => {
     if (gtdObj !== null) {
         const eliminate_status = removeIndexFromGtd(gtdObj.inbox, id)
         if (eliminate_status !== null) {
-            response.status(200).json({
+            return response.status(200).json({
                 message: 'success'
             });
         }
