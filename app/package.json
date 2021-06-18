@@ -12,6 +12,9 @@
     "@fortawesome/free-brands-svg-icons": "5.15.3",
     "@fortawesome/free-solid-svg-icons": "5.15.3",
     "@fortawesome/react-fontawesome": "0.1.14",
+    "@geist-ui/react": "^2.1.5",
+    "firebase": "^8.6.8",
+    "firebase-admin": "^9.9.0",
     "next": "10.2.3",
     "react": "17.0.2",
     "react-dom": "17.0.2"

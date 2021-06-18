@@ -1,10 +1,39 @@
 import Head from "next/head";
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Button } from "@geist-ui/react";
+import React, { useState } from 'react';
+import Router from "next/router";
+import firebase from "firebase/app";
+import "firebase/auth";
+import initFirebase from "./services/firebase";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { useEffect } from 'react'
+import { useEffect } from 'react';
+
+initFirebase();
+
+const provider = new firebase.auth.GoogleAuthProvider();
 
 const Login = ()=>{
+
+  const [authorizing, setAuthorizing] = useState(false);
+
+  const handleAuthentication = async () => {
+    setAuthorizing(true);
+
+    try {
+      const result = await firebase.auth().signInWithPopup(provider);
+
+      const { user, credentials } = result;
+
+      console.log({ user, credentials });
+
+      if (!user) {
+        throw new Error("se encontro un error con la authorizacion");
+      }
+      Router.push("/");
+    } catch (error) {}
+      setAuthorizing(false);
+  };
 
   //Obtenemos los botones cuando se le haga click
   const handleClick = ()=> {
@@ -38,15 +67,16 @@ const Login = ()=>{
           <form action="#">
             <h1>Sign in</h1>
             <div className="social-container">
-              <a href="#" className="social">
+              <Button className="social">
                 <FontAwesomeIcon icon={faFacebook} />
-              </a>
-              <a href="#" className="social">
+              </Button>
+              <Button onClick={handleAuthentication} loading={authorizing} className="social" style={{ margin: '10px' }}
+              >
                 <FontAwesomeIcon icon={faGoogle} />
-              </a>
-              <a href="#" className="social">
+              </Button>
+              <Button className="social">
                 <FontAwesomeIcon icon={faGithub} />
-              </a>
+              </Button>
             </div>
             <span>or use your account</span>
             <input type="email" placeholder="Email" />
