@@ -102,16 +102,17 @@ router.delete('/:user_id/:id', (request, response) => {
     const user_id = request.params.user_id
     const id = request.params.id
     const gtdObj = searchByIDUser(user_id)
-    const eliminate_status = removeIndexFromGtd(gtdObj.inbox, id)
-    if (eliminate_status != null) {
-        response.status(200).json({
-            message: 'success'
-        });
-    } else {
-        response.status(404).json({
-            message: 'error'
-        })
+    if (gtdObj !== null) {
+        const eliminate_status = removeIndexFromGtd(gtdObj.inbox, id)
+        if (eliminate_status !== null) {
+            return response.status(200).json({
+                message: 'success'
+            });
+        }
     }
+    response.status(404).json({
+        message: 'error'
+    })
 });
 
 //Funcion para obtener el usuario por su id
