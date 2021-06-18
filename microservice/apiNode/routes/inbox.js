@@ -76,22 +76,29 @@ router.patch('/:user_id/:id', (request, response) => {
     if(gtdObj != null){
         const inboxObj = searchByIDInbox(gtdObj.inbox, id)
         //Permite cambiar valores agregados en el cuerpo
-        let data = {
-            ...inboxObj,
-            ...(request.body.description && { description: request.body.description }),
-            update_at: new Date()
-        }
+        if(inboxObj != null){
+            let data = {
+                ...inboxObj,
+                ...(request.body.description && { description: request.body.description }),
+                update_at: new Date()
+            }
 
-        let edited_status = editInboxFromGtd(gtdObj.inbox, user_id, id, data)
-        if (edited_status != null) {
-            return response.status(200).json({
-                data: data,
-                message: 'success'
-            })
-        } else {
-            return response.status(400).json({
+            let edited_status = editInboxFromGtd(gtdObj.inbox, user_id, id, data)
+            if (edited_status != null) {
+                return response.status(200).json({
+                    data: data,
+                    message: 'success'
+                })
+            } else {
+                return response.status(400).json({
+                    data: null,
+                    message: 'error'
+                })
+            }
+        }else {
+            return response.status(404).json({
                 data: null,
-                message: 'error'
+                message: 'error, inbox not found'
             })
         }
     }else {
