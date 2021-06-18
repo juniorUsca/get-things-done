@@ -2,9 +2,24 @@ import Head from "next/head";
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { useEffect } from 'react'
+import { useEffect } from 'react';
+import { auth } from './firebase'
+
 
 const Login = ()=>{
+
+  const signIn = () => {   
+
+    return auth
+     .signInWithEmailAndPassword("usuario1@gmail.com", "12345678")
+     .then((response) => {
+      setUser(response.user);
+      return response.user;
+     })
+     .catch((error) => {
+      return { error };
+     });
+   };
 
   //Obtenemos los botones cuando se le haga click
   const handleClick = ()=> {
@@ -71,8 +86,8 @@ const Login = ()=>{
             </div>
             <span>or use your email for registration</span>
             <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input type="email" id="email" placeholder="Email" />
+            <input type="password" if="password" placeholder="Password" />
             <button>Sign Up</button>
             </form>
           </div>
@@ -84,7 +99,7 @@ const Login = ()=>{
               <p>
                 To keep connected with us please login with your personal info
               </p>
-              <button className="ghost" id="signIn" onClick={handleClick}>
+              <button className="ghost" id="signIn" onClick={signIn}>
                 Sign In
               </button>
             </div>
