@@ -49,24 +49,30 @@ router.post('/:user_id', (request, response) => {
 
     const gtdObj = searchByIDUser(user_id)
 
-    if (!request.body.description) {
-        return response.status(400).json({
+    if (gtdObj !== null){
+        if (!request.body.description) {
+            return response.status(400).json({
+                data: null,
+                message: 'error'
+            })
+        }
+        const newInbox = {
+            id: uuid(),
+            descroption: request.body.description,
+            created_at: new Date()
+        }
+        gtdObj.inbox.push(newInbox)
+        return response.status(201).json({
+            data: newInbox,
+            message: 'success'
+        })
+    }else {
+        return response.status(404).json({
             data: null,
-            message: 'error'
+            message: 'error, user not found'
         })
     }
-    const newInbox = {
-        id: uuid(),
-        descroption: request.body.description,
-        created_at: new Date()
-    }
-    gtdObj.inbox.push(newInbox)
-    response.status(201).json({
-        data: newInbox,
-        message: 'success'
-    })
 })
-
 
 // Actualizar inbox
 router.patch('/:user_id/:id', (request, response) => {
