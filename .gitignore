@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+MicroserviceImbox/ApiNodeJS/node_modules
+MicroserviceImbox/ApiNodeJS/.env
