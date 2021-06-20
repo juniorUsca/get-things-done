@@ -1,65 +1,17 @@
 import React from 'react'
-import { useEffect } from 'react'
-import Login from './components/LoginComponents/Login'
-import Register from './components/RegisterComponents/Register'
-import OverlayLogin from "./components/LoginComponents/OverlayLogin";
-import OverlayRegister from "./components/RegisterComponents/OverlayRegister";
 
-const Index = ()=>{
+const OverlayLogin = (props) => {
+    return ( 
+        <div>
+            <div className="overlay-panel overlay-right">
+              <h1>Hello, Friend!</h1>
+              <p>Enter your personal details and start journey with us</p>
+              <button className="ghost" id="signUp" onClick={props.handleClick}>
+                Sign Up
+              </button>
+            </div>
 
-    //Obtenemos los botones cuando se le haga click
-    const handleClick = ()=> {
-    const signUpButton = document.getElementById('signUp');
-    const signInButton = document.getElementById('signIn');
-    const container = document.getElementById('container');
-    
-    //Agregamos clases para el desplazamiento
-    signUpButton.addEventListener('click', () => {
-      container.classList.add("right-panel-active");
-    });
-    
-    signInButton.addEventListener('click', () => {
-      container.classList.remove("right-panel-active");
-    });
-  }
-
-  //Al montarse el componente inicializamos los botones
-  //Para evitar el error de undefined en los botones
-  useEffect(()=>{
-    handleClick()
-  })
-
-  return (
-    <div className="principalContainer">
-      <div className="container" id="container">
-
-        {/*LOGIN DE USUARIO*/}
-        <Login />
-
-        {/*REGISTRO DE USUARIO*/}
-        <Register />
-        
-        {/*MENSAJES DE BIENVENIDA*/}
-        <div className="overlay-container">
-          
-          <div className="overlay">
-
-            {/*OVERLAY REGISTER*/}
-            <OverlayRegister handleClick={handleClick}/>
-
-            {/*OVERLAY LOGIN*/}
-            <OverlayLogin handleClick={handleClick}/>
-
-          </div>
-        </div>
-      </div>
-
-      {/*
-        Los siguientes estilos son locales, 
-        no afectan a otros componentes
-      */}
-
-      <style jsx >{`
+            <style jsx >{`
         
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
         * {
@@ -259,9 +211,8 @@ const Index = ()=>{
       `}
 
       </style>
-    </div>
-  );
+        </div>
+    );
 }
-
-export default Index
-
+ 
+export default OverlayLogin;
