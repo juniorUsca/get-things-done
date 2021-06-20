@@ -52,7 +52,13 @@ El segundo nos ayuda a crear un nuevo aplicativo el flutter, donde al selecciona
 
 Se mejoró el diseño del Login. Se creó un archivo Background donde se diseño el fondo de nuestro login y se llamo a este desde el archivo login.dart y se coloco un widget nuevo con un diseño de formulario.
 ANTES
+
 ![loginanterior](https://user-images.githubusercontent.com/65316299/122658818-4969a980-d137-11eb-87d7-0a4b4a7c0851.jpg)
 
 DESPUES
+
 ![login](https://user-images.githubusercontent.com/65316299/122658816-47074f80-d137-11eb-85f6-423d58934ff2.jpg)
+
+## SingIn design
+
+![registro](https://user-images.githubusercontent.com/65316299/122661287-2ac2dd00-d14e-11eb-86ba-feadd304a95d.jpg)
