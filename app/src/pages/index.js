@@ -99,7 +99,7 @@ const Login = ()=>{
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
             <a href="#">Forgot your password?</a>
-            <button>Sign In</button>
+            <button id="signIn" onClick={signIn}>Sign In</button>
           </form>
         </div>
         <div className="form-container sign-up-container">
@@ -131,7 +131,7 @@ const Login = ()=>{
               <p>
                 To keep connected with us please login with your personal info
               </p>
-              <button className="ghost" id="signIn" onClick={signIn}>
+              <button className="ghost" id="signIn" onClick={handleClick}>
                 Sign In
               </button>
             </div>
