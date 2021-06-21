@@ -1,6 +1,9 @@
-import {Calendar, momentLocalizer} from "react-big-calendar";
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import { messages } from "./calendar-es";
 import moment from 'moment'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
+
+moment.locale('es')
 
 const CalendarComponent = ({ events }) => {
 
@@ -26,6 +29,9 @@ const CalendarComponent = ({ events }) => {
             <Calendar
                 localizer={localizer}
                 events={eventsTemp}
+                startAccessor="start"
+                endAccessor="end"
+                messages={ messages }
             />
             <style jsx>
                 {`
