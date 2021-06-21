@@ -3,7 +3,6 @@ import 'package:getthingsdone/Views/SigIn.dart';
 import 'package:getthingsdone/Views/Welcome.dart';
 import 'package:getthingsdone/provider/google_sign_in.dart';
 import 'package:provider/provider.dart';
-
 import 'Views/Login.dart';
 import 'Views/SplashPage.dart';
 
