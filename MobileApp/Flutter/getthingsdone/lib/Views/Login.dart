@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'background_page.dart';
+import 'package:flutter_login/flutter_login.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:getthingsdone/provider/google_sign_in.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -124,6 +128,51 @@ class _LoginPageState extends State<LoginPage> {
             textColor: Colors.white,
             onPressed: (){});
       },
+   /*    @override
+  Widget build(BuildContext context) {
+    return FlutterLogin(
+      title: 'GetThingsDone',
+      logo: 'assets/images/logo.png',
+      onLogin: _authUser,
+      onSignup: _authUser,
+      loginProviders: <LoginProvider>[
+        LoginProvider(
+          icon: FontAwesomeIcons.google,
+          callback: () async {
+            final provider =
+                Provider.of<GoogleSignInProvider>(context, listen: false);
+            provider.googleLogin();
+          },
+        ),
+        LoginProvider(
+          icon: FontAwesomeIcons.facebookF,
+          callback: () async {
+            print('start facebook sign in');
+            await Future.delayed(loginTime);
+            print('stop facebook sign in');
+            return null;
+          },
+        ),
+        LoginProvider(
+          icon: FontAwesomeIcons.linkedinIn,
+          callback: () async {
+            print('start linkdin sign in');
+            await Future.delayed(loginTime);
+            print('stop linkdin sign in');
+            return null;
+          },
+        ),
+        LoginProvider(
+          icon: FontAwesomeIcons.githubAlt,
+          callback: () async {
+            print('start github sign in');
+            await Future.delayed(loginTime);
+            print('stop github sign in');
+            return null;
+          },
+        ),
+      ],
+      onRecoverPassword: _recoverPassword,
     );
-  }
+  } */
 }

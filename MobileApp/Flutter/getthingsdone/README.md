@@ -28,7 +28,19 @@ Para poder crear una aplicación en fluter se usa el siguiente comando:
     flutter create nombreAplicativo
 ```
 Se debe tener en cuenta que para el nombre del aplicativo este solo debe tener letras en minusculas, ya que no te permite el uso de mayusculas ni de caracteres especiales.
+## helpers 
+- [Login Firebase y google](https://firebase.flutter.dev/docs/auth/social)
+- [keytool no se reconoce como un comando...](https://es.stackoverflow.com/questions/93157/keytool-no-se-reconoce-como-un-comando-interno-o-externo-programa-o-archivo-p)
+- [Agregar firebase a un proyecto Flutter](https://firebase.google.com/docs/android/setup?hl=es#java)
+## Dpendencias 
 
+  - [flutter_login: ^2.0.0 nos proove de un login](https://pub.dev/packages?q=flutter_login)
+  - [font_awesome_flutter: ^9.0.0 iconos de google](https://pub.dev/packages?q=font_awesome_flutter)
+  - [intl: ^0.17.0 Contiene código para tratar con mensajes internacionalizados ](https://pub.dev/packages?q=intl)
+ - [firebase_core: Complemento Flutter para Firebase](https://pub.dev/packages?q=firebase_core)
+ - [firebase_auth: Complemento Flutter para Firebase Auth](https://pub.dev/packages?q=firebase_auth)
+  - [google_sign_in: Complemento de Flutter para el inicio de sesión de Google](https://pub.dev/packages?q=google_sign_in)
+  - [provider: ^5.0.0 Un envoltorio alrededor de InheritedWidget para que sean más fáciles de usar y más reutilizables](https://pub.dev/packages?q=provider)
 ## Plugins used
 
 Se utilizaron los siguientes plugins:
@@ -62,3 +74,4 @@ DESPUES
 ## SingIn design
 
 ![registro](https://user-images.githubusercontent.com/65316299/122661287-2ac2dd00-d14e-11eb-86ba-feadd304a95d.jpg)
+
