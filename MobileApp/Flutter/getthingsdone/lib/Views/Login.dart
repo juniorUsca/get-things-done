@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:getthingsdone/provider/google_sign_in.dart';
+import 'package:provider/provider.dart';
 
 const users = const {
   'dribbble@gmail.com': '12345',
@@ -37,17 +39,16 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlutterLogin(
       title: 'GetThingsDone',
-      logo: 'assets/images/ecorp-lightblue.png',
+      logo: 'assets/images/logo.png',
       onLogin: _authUser,
       onSignup: _authUser,
       loginProviders: <LoginProvider>[
         LoginProvider(
           icon: FontAwesomeIcons.google,
           callback: () async {
-            print('start google sign in');
-            await Future.delayed(loginTime);
-            print('stop google sign in');
-            return null;
+            final provider =
+                Provider.of<GoogleSignInProvider>(context, listen: false);
+            provider.googleLogin();
           },
         ),
         LoginProvider(
