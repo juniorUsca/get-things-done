@@ -3,8 +3,10 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { useEffect } from 'react';
-import { auth } from './firebase'
-
+import firebase from "firebase/app";
+import "firebase/auth";
+import { loginWithGitHub } from "./firebase"
+import { loginWithFacebook } from "./firebase"
 
 const Login = ()=>{
 
@@ -21,8 +23,10 @@ const Login = ()=>{
      });
    };
 
+  //Facebook
+
   //Obtenemos los botones cuando se le haga click
-  const handleClick = ()=> {
+    const handleClick = ()=> {
     const signUpButton = document.getElementById('signUp');
     const signInButton = document.getElementById('signIn');
     const container = document.getElementById('container');
@@ -43,23 +47,38 @@ const Login = ()=>{
     handleClick()
   })
 
+const handleClickGithub = () => {
+  loginWithGitHub().then(user =>{
+    console.log(user)
+  }).catch(err => {
+    console.log(err)
+  })
+}
+
+const handleClickFacebook = () => {
+  loginWithFacebook().then(user =>{
+    console.log(user)
+  }).catch(err => {
+    console.log(err)
+  })
+}
+
   return (
     <div className="principalContainer">     
       <Head>
       </Head> 
-      <div className="container" id="container">
-
+      <div className="container" id="container">        
         <div className="form-container sign-in-container">
           <form action="#">
             <h1>Sign in</h1>
             <div className="social-container">
-              <a href="#" className="social">
+              <a href="#" className="social" onClick={handleClickFacebook}>
                 <FontAwesomeIcon icon={faFacebook} />
               </a>
               <a href="#" className="social">
                 <FontAwesomeIcon icon={faGoogle} />
               </a>
-              <a href="#" className="social">
+              <a href="#" className="social" onClick={handleClickGithub}>
                 <FontAwesomeIcon icon={faGithub} />
               </a>
             </div>
