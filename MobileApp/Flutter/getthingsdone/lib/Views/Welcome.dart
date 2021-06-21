@@ -25,22 +25,40 @@ class WelcomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Center(
-                      child: ElevatedButton(
-                    child: Text('Ir al login'),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/login');
-                    },
-                  )),
-                  Center(child: ThemeButton(
+                    child: ClipOval(
+                      child: Container(
+                        width: 180,
+                        height: 180,
+                        color: AppColors.MAIN_COLOR,
+                        alignment: Alignment.center,
+                        child: Image.asset('assets/images/logo.png'),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 50),
+                  Text('Bienvenido/a',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold)),
+                  SizedBox(height: 50),
+                  ThemeButton(
+                    label: "Hacer Login",
+                    labelColor: Colors.white,
+                    color: Colors.transparent,
+                    highlight: AppColors.MAIN_COLOR.withOpacity(0.5),
+                    borderColor: AppColors.MAIN_COLOR,
+                    borderWidth: 4,
                     onClick: () async {
-                      Navigator.pushNamed(context, '/sigin');
+                      Navigator.pushNamed(context, '/login');
                       // bool success = await loginService.signInWithGoogle();
 
                       // if (success) {
                       //   Navigator.pushNamed(context, '/sigin');
                       // }
                     },
-                  ))
+                  )
                 ],
               ),
             )
