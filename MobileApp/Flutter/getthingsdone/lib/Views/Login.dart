@@ -46,9 +46,10 @@ class LoginScreen extends StatelessWidget {
         LoginProvider(
           icon: FontAwesomeIcons.google,
           callback: () async {
-            final provider =
-                Provider.of<GoogleSignInProvider>(context, listen: false);
-            provider.googleLogin();
+            print('start facebook sign in');
+            await Future.delayed(loginTime);
+            print('stop facebook sign in');
+            return null;
           },
         ),
         LoginProvider(
