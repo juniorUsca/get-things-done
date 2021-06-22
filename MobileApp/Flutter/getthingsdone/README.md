@@ -28,7 +28,19 @@ Para poder crear una aplicación en fluter se usa el siguiente comando:
     flutter create nombreAplicativo
 ```
 Se debe tener en cuenta que para el nombre del aplicativo este solo debe tener letras en minusculas, ya que no te permite el uso de mayusculas ni de caracteres especiales.
+## helpers 
+- [Login Firebase y google](https://firebase.flutter.dev/docs/auth/social)
+- [keytool no se reconoce como un comando...](https://es.stackoverflow.com/questions/93157/keytool-no-se-reconoce-como-un-comando-interno-o-externo-programa-o-archivo-p)
+- [Agregar firebase a un proyecto Flutter](https://firebase.google.com/docs/android/setup?hl=es#java)
+## Dpendencias 
 
+  - [flutter_login: ^2.0.0 nos proove de un login](https://pub.dev/packages?q=flutter_login)
+  - [font_awesome_flutter: ^9.0.0 iconos de google](https://pub.dev/packages?q=font_awesome_flutter)
+  - [intl: ^0.17.0 Contiene código para tratar con mensajes internacionalizados ](https://pub.dev/packages?q=intl)
+ - [firebase_core: Complemento Flutter para Firebase](https://pub.dev/packages?q=firebase_core)
+ - [firebase_auth: Complemento Flutter para Firebase Auth](https://pub.dev/packages?q=firebase_auth)
+  - [google_sign_in: Complemento de Flutter para el inicio de sesión de Google](https://pub.dev/packages?q=google_sign_in)
+  - [provider: ^5.0.0 Un envoltorio alrededor de InheritedWidget para que sean más fáciles de usar y más reutilizables](https://pub.dev/packages?q=provider)
 ## Plugins used
 
 Se utilizaron los siguientes plugins:
@@ -47,3 +59,19 @@ Como podemos ver tenemos dos opciones el primero nos ayuda a escoger donde quere
 El segundo nos ayuda a crear un nuevo aplicativo el flutter, donde al seleccionar este nos abrirá nuestro Explorador de Archivos para que podamos escoger donde vamos a crear nuestro proyecto y después de escoger nos saldrá una barra para colocar el nombre del proyecto y listo.
 ![folder](https://user-images.githubusercontent.com/65316299/122508551-c544e400-cfc7-11eb-88fc-bf7d0143767e.jpg)
 ![nameFlutter](https://user-images.githubusercontent.com/65316299/122508594-cfff7900-cfc7-11eb-89c3-8df9f2916b0b.jpg)
+
+## Login design
+
+Se mejoró el diseño del Login. Se creó un archivo Background donde se diseño el fondo de nuestro login y se llamo a este desde el archivo login.dart y se coloco un widget nuevo con un diseño de formulario.
+ANTES
+
+![loginanterior](https://user-images.githubusercontent.com/65316299/122658818-4969a980-d137-11eb-87d7-0a4b4a7c0851.jpg)
+
+DESPUES
+
+![login](https://user-images.githubusercontent.com/65316299/122658816-47074f80-d137-11eb-85f6-423d58934ff2.jpg)
+
+## SingIn design
+
+![registro](https://user-images.githubusercontent.com/65316299/122661287-2ac2dd00-d14e-11eb-86ba-feadd304a95d.jpg)
+

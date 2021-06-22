@@ -1,20 +1,26 @@
 import firebase from 'firebase/app';
+import "firebase/analytics";
 import "firebase/auth";
 import "firebase/firestore";
 
-const clientCredentials = {
-    apiKey: "AIzaSyC__Osaj_QQW9X5A48zjf22hGgZm2km21Y",
-    authDomain: "get-things-done-52acc.firebaseapp.com",
-    projectId: "get-things-done-52acc",
-    storageBucket: "get-things-done-52acc.appspot.com",
-    messagingSenderId: "311934038137",
-    appId: "1:311934038137:web:5b8a855b017f613e1de4a8"
+const firebaseConfig = {
+    apiKey: "AIzaSyArFGqGZ4phKYOQsA4UJN4UotS2djQ8lUo",
+    authDomain: "login-89a2d.firebaseapp.com",
+    projectId: "login-89a2d",
+    storageBucket: "login-89a2d.appspot.com",
+    messagingSenderId: "572463801506",
+    appId: "1:572463801506:web:5335a8c1e7b4daf18ba3fb",
+    measurementId: "G-C7LB2TNZVW"
 };
 
-if (!firebase.apps.length) {
-    firebase.initializeApp(clientCredentials);
+firebase.initializeApp(firebaseConfig)
+
+export const loginWithGitHub = () => {
+    const githubProvider = new firebase.auth.GithubAuthProvider()
+    return firebase.auth().signInWithPopup(githubProvider)
+}
+export const loginWithFacebook = () => {
+    const facebookbProvider = new firebase.auth.FacebookAuthProvider()
+    return firebase.auth().signInWithPopup(facebookbProvider)
 }
 
-const auth = firebase.auth()
-
-export { auth };
