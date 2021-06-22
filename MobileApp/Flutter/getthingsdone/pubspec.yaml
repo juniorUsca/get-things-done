@@ -31,10 +31,7 @@ dependencies:
   flutter_login: ^2.0.0
   font_awesome_flutter: ^9.0.0
   intl: ^0.17.0
-  #google sign in
-  firebase_core:
-  firebase_auth:
-  google_sign_in:
+  # dummy package to test https://github.com/NearHuscarl/flutter_login/issues/35
   provider: ^5.0.0
 
 
