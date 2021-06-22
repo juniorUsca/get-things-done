@@ -60,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
           TextButton(
               child: Text('Crear una nueva cuenta', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
               onPressed: () =>
-                  print('IR A REGISTRO')),
+                  Navigator.pushReplacementNamed(context, 'signin_page')),
           SizedBox(height: 100.0)
         ],
       ),
