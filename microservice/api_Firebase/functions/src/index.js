@@ -5,6 +5,7 @@ import { db } from './config'
 import inbox from './routes/inbox'
 import tickerfile from './routes/tickerfile'
 import incubator from './routes/incubator'
+import calendar from './routes/calendar'
 
 const app = express()
 
@@ -89,6 +90,9 @@ app.use('/api/tickerfile/', tickerfile)
 
 //Ruta incubator
 app.use('/api/incubator/', incubator)
+
+//Ruta calendar
+app.use('/api/calendar/', calendar)
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
