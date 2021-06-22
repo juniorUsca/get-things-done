@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getthingsdone/Views/lateral_menu_view/menu_lateral.dart';
 import 'background.dart';
 
 
@@ -6,7 +7,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      drawer: LateraPage(),
       appBar: AppBar(
         title: Text('Tareas', style: TextStyle(color: Colors.green)),
         backgroundColor: Colors.white,
