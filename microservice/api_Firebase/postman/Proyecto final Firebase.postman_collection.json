@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "982a0c81-f867-4219-b6b1-b602d3947a66",
+		"name": "Proyecto final Firebase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "crear inbox",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"presentar trabajo2\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/inbox/usuario1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"inbox",
+						"usuario1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar inbox",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/inbox/usuario1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"inbox",
+						"usuario1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar inbox",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"regar plantas editado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/inbox/usuario1/-MckTaaiySBNpETRl7_e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"inbox",
+						"usuario1",
+						"-MckTaaiySBNpETRl7_e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar inbox",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/inbox/usuario1/-Mckcfbn3pa2aToumyXn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"inbox",
+						"usuario1",
+						"-Mckcfbn3pa2aToumyXn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar un inbox",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/inbox/usuario1/-MckTaaiySBNpETRl7_e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"inbox",
+						"usuario1",
+						"-MckTaaiySBNpETRl7_e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"usuario7\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/new-user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"new-user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar un todo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -8,9 +8,8 @@ const router = express.Router()
 router.get('/:id', (request, response) => {
     const user_id = request.params.id
     const gtdObj = searchByIDUser(user_id)
-    const inbox = gtdObj.inbox
-    console.log(inbox)
-    if (inbox != null) {
+    if (gtdObj != null) {
+        const inbox = gtdObj.inbox
         response.status(200).json({
             data: inbox,
             message: 'success'
@@ -29,18 +28,19 @@ router.get('/:user_id/:id', (request, response) => {
     const id = request.params.id
     const user_id = request.params.user_id
     const gtdObj = searchByIDUser(user_id)
-    const inboxObj = searchByIDInbox(gtdObj.inbox, id)
-    if (inboxObj !== null) {
-        response.status(200).json({
-            data: inboxObj,
-            message: 'success'
-        })
-    } else {
-        response.status(404).json({
-            data: null,
-            message: 'error'
-        })
+    if (gtdObj !== null) {
+        const inboxObj = searchByIDInbox(gtdObj.inbox, id)
+        if (inboxObj !== null) {
+            return response.status(200).json({
+                data: inboxObj,
+                message: 'success'
+            })
+        }
     }
+    response.status(404).json({
+        data: null,
+        message: 'error'
+    })
 })
 
 // crear inbox
@@ -49,52 +49,70 @@ router.post('/:user_id', (request, response) => {
 
     const gtdObj = searchByIDUser(user_id)
 
-    if (!request.body.description) {
-        return response.status(400).json({
+    if (gtdObj !== null){
+        if (!request.body.description) {
+            return response.status(400).json({
+                data: null,
+                message: 'error'
+            })
+        }
+        const newInbox = {
+            id: uuid(),
+            descroption: request.body.description,
+            created_at: new Date()
+        }
+        gtdObj.inbox.push(newInbox)
+        return response.status(201).json({
+            data: newInbox,
+            message: 'success'
+        })
+    }else {
+        return response.status(404).json({
             data: null,
-            message: 'error'
+            message: 'error, user not found'
         })
     }
-    const newInbox = {
-        id: uuid(),
-        descroption: request.body.description,
-        created_at: new Date()
-    }
-    gtdObj.inbox.push(newInbox)
-    response.status(201).json({
-        data: newInbox,
-        message: 'success'
-    })
 })
-
 
 // Actualizar inbox
 router.patch('/:user_id/:id', (request, response) => {
     const user_id = request.params.user_id
     const id = request.params.id
     const gtdObj = searchByIDUser(user_id)
-    const inboxObj = searchByIDInbox(gtdObj.inbox, id)
+    if(gtdObj != null){
+        const inboxObj = searchByIDInbox(gtdObj.inbox, id)
+        //Permite cambiar valores agregados en el cuerpo
+        if(inboxObj != null){
+            let data = {
+                ...inboxObj,
+                ...(request.body.description && { description: request.body.description }),
+                update_at: new Date()
+            }
 
-    //Permite cambiar valores agregados en el cuerpo
-    let data = {
-        ...inboxObj,
-        ...(request.body.description && { description: request.body.description }),
-        update_at: new Date()
-    }
-
-    let edited_status = editInboxFromGtd(gtdObj.inbox, user_id, id, data)
-    if (edited_status != null) {
-        response.status(200).json({
-            data: data,
-            message: 'success'
-        })
-    } else {
-        return response.status(400).json({
+            let edited_status = editInboxFromGtd(gtdObj.inbox, user_id, id, data)
+            if (edited_status != null) {
+                return response.status(200).json({
+                    data: data,
+                    message: 'success'
+                })
+            } else {
+                return response.status(400).json({
+                    data: null,
+                    message: 'error'
+                })
+            }
+        }else {
+            return response.status(404).json({
+                data: null,
+                message: 'error, inbox not found'
+            })
+        }
+    }else {
+        return response.status(404).json({
             data: null,
-            message: 'error'
+            message: 'error, user not found'
         })
     }
-
 })
 
 
@@ -103,16 +121,17 @@ router.delete('/:user_id/:id', (request, response) => {
     const user_id = request.params.user_id
     const id = request.params.id
     const gtdObj = searchByIDUser(user_id)
-    const eliminate_status = removeIndexFromGtd(gtdObj.inbox, id)
-    if (eliminate_status != null) {
-        response.status(200).json({
-            message: 'success'
-        });
-    } else {
-        response.status(404).json({
-            message: 'error'
-        })
+    if (gtdObj !== null) {
+        const eliminate_status = removeIndexFromGtd(gtdObj.inbox, id)
+        if (eliminate_status !== null) {
+            return response.status(200).json({
+                message: 'success'
+            });
+        }
     }
+    response.status(404).json({
+        message: 'error'
+    })
 });
 
 //Funcion para obtener el usuario por su id
