@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:getthingsdone/Views/home_view/home_page.dart';
 import '../../Controllers/Controller.dart';
-import 'SigIn.dart';
 import 'background_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -78,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) {
-                              return SignInPage();
+                              return HomePage();
                             },
                           ),
                         );
