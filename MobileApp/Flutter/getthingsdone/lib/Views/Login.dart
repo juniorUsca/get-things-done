@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:getthingsdone/provider/google_sign_in.dart';
-import 'package:provider/provider.dart';
 
 const users = const {
   'dribbble@gmail.com': '12345',
@@ -46,9 +44,9 @@ class LoginScreen extends StatelessWidget {
         LoginProvider(
           icon: FontAwesomeIcons.google,
           callback: () async {
-            print('start facebook sign in');
+            print('start google sign in');
             await Future.delayed(loginTime);
-            print('stop facebook sign in');
+            print('stop google sign in');
             return null;
           },
         ),
