@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Views/Login.dart';
-import 'Views/SigIn.dart';
+import 'package:getthingsdone/Views/login_view/Login.dart';
+import 'package:getthingsdone/Views/login_view/SigIn.dart';
 
 void main() {
   runApp(MyApp());
