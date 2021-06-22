@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getthingsdone/bloc/provider.dart';
 import 'background_page.dart';
 
 class SignInPage extends StatefulWidget {
@@ -17,6 +18,7 @@ class _SignInPageState extends State<SignInPage> {
   }
 
   Widget _singinForm(BuildContext context) {
+    final bloc = Provider.of(context);
     final size = MediaQuery.of(context).size;
 
     return SingleChildScrollView(
@@ -49,9 +51,9 @@ class _SignInPageState extends State<SignInPage> {
                         color: Colors.indigoAccent,
                         fontWeight: FontWeight.bold)),
                 SizedBox(height: 20.0),
-                _crearEmail(),
+                _crearEmail(bloc),
                 SizedBox(height: 30.0),
-                _crearPassword(),
+                _crearPassword(bloc),
                 SizedBox(height: 30.0),
                 _crearBoton()
               ],
@@ -67,8 +69,9 @@ class _SignInPageState extends State<SignInPage> {
     );
   }
 
-  Widget _crearEmail() {
+  Widget _crearEmail(LoginBloc bloc) {
     return StreamBuilder(
+      stream: bloc.emailStream,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return Container(
           padding: EdgeInsets.symmetric(horizontal: 20.0),
@@ -77,15 +80,18 @@ class _SignInPageState extends State<SignInPage> {
             decoration: InputDecoration(
                 icon: Icon(Icons.mail_outline, color: Colors.lightBlueAccent),
                 hintText: 'ejemplo@correo.com',
-                labelText: 'Correo electrónico'),
+                labelText: 'Correo electrónico',counterText: snapshot.data,
+                errorText: snapshot.error),
+                onChanged: bloc.changeEmail,
           ),
         );
       },
     );
   }
 
-  Widget _crearPassword() {
+  Widget _crearPassword(LoginBloc bloc) {
     return StreamBuilder(
+      stream: bloc.passwordStream,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return Container(
           padding: EdgeInsets.symmetric(horizontal: 20.0),
@@ -94,6 +100,8 @@ class _SignInPageState extends State<SignInPage> {
             decoration: InputDecoration(
               icon: Icon(Icons.lock_outline, color: Colors.lightBlueAccent),
               labelText: 'Contraseña',
+              counterText: snapshot.data,
+              errorText: snapshot.error,
               suffixIcon: IconButton(
                 onPressed: () {
                   setState(() {
@@ -104,6 +112,7 @@ class _SignInPageState extends State<SignInPage> {
                     hidePassword ? Icons.visibility_off : Icons.visibility),
               ),
             ),
+            onChanged: bloc.changePassword,
           ),
         );
       },
