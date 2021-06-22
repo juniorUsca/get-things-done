@@ -81,7 +81,7 @@ router.get('/:user_id', (request, response) => {
                 for (const [key, value] of Object.entries(snapshot.val())) {
                     //console.log(key, value);
                     data.push({
-                        id: key,
+                        calendar_id: key,
                         description: value.description,
                         date: value.date,
                         start_time: value.start_time,
@@ -138,7 +138,7 @@ router.get('/:user_id/:calendar_id', (request, response) => {
         db.ref("users").child(user_id).child('calendar').child(calendar_id).get().then((snapshot) => {
             if (snapshot.exists()) {
                 let data = {
-                    index_id: snapshot.key,
+                    calendar_id: snapshot.key,
                     ...snapshot.val()
                 }
                 return response.status(200).json({
@@ -226,7 +226,7 @@ router.patch('/:user_id/:calendar_id', (request, response) => {
 
                 db.ref('users').child(user_id).child('calendar').child(calendar_id).child('updated_at').set((new Date()).toISOString())
                 let data = {
-                    index_id: snapshot.key,
+                    calendar_id: snapshot.key,
                     ...snapshot.val(),
                     ...(description && { description: description }),
                     ...(status_done && { status_done: status_done }),

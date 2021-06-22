@@ -1,7 +1,7 @@
 {
     "info": {
-        "_postman_id": "982a0c81-f867-4219-b6b1-b602d3947a66",
-        "name": "Proyecto final Firebase",
+        "_postman_id": "55a3724e-6d39-45aa-8790-73ef9a559e7e",
+        "name": "Proyecto final Firebase Heroku",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
     "item": [{
@@ -19,12 +19,13 @@
                     }
                 },
                 "url": {
-                    "raw": "http://localhost:3001/api/inbox/usuario1",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/inbox/usuario1",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "inbox",
@@ -40,12 +41,13 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "http://localhost:3001/api/inbox/usuario1",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/inbox/usuario1",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "inbox",
@@ -61,12 +63,13 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "http://localhost:3001/api/inbox/usuario1/-MckTaaiySBNpETRl7_e",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/inbox/usuario1/-MckTaaiySBNpETRl7_e",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "inbox",
@@ -92,12 +95,13 @@
                     }
                 },
                 "url": {
-                    "raw": "http://localhost:3001/api/inbox/usuario1/-MckTaaiySBNpETRl7_e",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/inbox/usuario1/-MckTaaiySBNpETRl7_e",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "inbox",
@@ -114,12 +118,13 @@
                 "method": "DELETE",
                 "header": [],
                 "url": {
-                    "raw": "http://localhost:3001/api/inbox/usuario1/-Mckcfbn3pa2aToumyXn",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/inbox/usuario1/-Mckcfbn3pa2aToumyXn",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "inbox",
@@ -145,12 +150,13 @@
                     }
                 },
                 "url": {
-                    "raw": "http://localhost:3001/api/todo/usuario1",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/todo/usuario1",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "todo",
@@ -166,12 +172,13 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "http://localhost:3001/api/todo/usuario1/-MckTaaiySBNpETRl7_e",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/todo/usuario1/-MckTaaiySBNpETRl7_e",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "todo",
@@ -188,12 +195,13 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "http://localhost:3001/api/todo/usuario1",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/todo/usuario1",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "todo",
@@ -218,12 +226,13 @@
                     }
                 },
                 "url": {
-                    "raw": "http://localhost:3001/api/todo/usuario1/-MckTaaiySBNpETRl7_e",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/todo/usuario1/-MckTaaiySBNpETRl7_e",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "todo",
@@ -240,12 +249,13 @@
                 "method": "DELETE",
                 "header": [],
                 "url": {
-                    "raw": "http://localhost:3001/api/todo/usuario1/-Mckcfbn3pa2aToumyXn",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/todo/usuario1/-Mckcfbn3pa2aToumyXn",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "todo",
@@ -271,12 +281,13 @@
                     }
                 },
                 "url": {
-                    "raw": "http://localhost:3001/api/tickerfile/usuario1",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/tickerfile/usuario1",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "tickerfile",
@@ -292,12 +303,13 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "http://localhost:3001/api/tickerfile/usuario1",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/tickerfile/usuario1",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "tickerfile",
@@ -313,12 +325,13 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "http://localhost:3001/api/tickerfile/usuario1/-Mckwfd1RnaBj_Y_EUQY",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/tickerfile/usuario1/-Mckwfd1RnaBj_Y_EUQY",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "tickerfile",
@@ -344,12 +357,13 @@
                     }
                 },
                 "url": {
-                    "raw": "http://localhost:3001/api/tickerfile/usuario1/-Mckwfd1RnaBj_Y_EUQY",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/tickerfile/usuario1/-Mckwfd1RnaBj_Y_EUQY",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "tickerfile",
@@ -366,12 +380,13 @@
                 "method": "DELETE",
                 "header": [],
                 "url": {
-                    "raw": "http://localhost:3001/api/tickerfile/usuario1/-Mckcfbn3pa2aToumyXn",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/tickerfile/usuario1/-Mckcfbn3pa2aToumyXn",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "tickerfile",
@@ -397,12 +412,13 @@
                     }
                 },
                 "url": {
-                    "raw": "http://localhost:3001/api/incubator/usuario1",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/incubator/usuario1",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "incubator",
@@ -418,12 +434,13 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "http://localhost:3001/api/incubator/usuario1",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/incubator/usuario1",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "incubator",
@@ -439,12 +456,13 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "http://localhost:3001/api/incubator/usuario1/-McloDWzodFuZAvH-6KH",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/incubator/usuario1/-McloDWzodFuZAvH-6KH",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "incubator",
@@ -470,12 +488,13 @@
                     }
                 },
                 "url": {
-                    "raw": "http://localhost:3001/api/incubator/usuario1/-McloDWzodFuZAvH-6KH",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/incubator/usuario1/-McloDWzodFuZAvH-6KH",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "incubator",
@@ -492,12 +511,13 @@
                 "method": "DELETE",
                 "header": [],
                 "url": {
-                    "raw": "http://localhost:3001/api/incubator/usuario1/-Mclog3qiiy7yu-Qhv0l",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/incubator/usuario1/-Mclog3qiiy7yu-Qhv0l",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "incubator",
@@ -523,12 +543,13 @@
                     }
                 },
                 "url": {
-                    "raw": "http://localhost:3001/api/calendar/usuario1",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/calendar/usuario1",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "calendar",
@@ -544,12 +565,13 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "http://localhost:3001/api/calendar/usuario1",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/calendar/usuario1",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "calendar",
@@ -565,12 +587,13 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "http://localhost:3001/api/calendar/usuario1/-McmaJMMnalrNcS5KT3u",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/calendar/usuario1/-McmaJMMnalrNcS5KT3u",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "calendar",
@@ -596,12 +619,13 @@
                     }
                 },
                 "url": {
-                    "raw": "http://localhost:3001/api/calendar/usuario1/-McmaJMMnalrNcS5KT3u",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/calendar/usuario1/-McmaJMMnalrNcS5KT3u",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "calendar",
@@ -618,12 +642,13 @@
                 "method": "DELETE",
                 "header": [],
                 "url": {
-                    "raw": "http://localhost:3001/api/calendar/usuario1/-McmaJMMnalrNcS5KT3u",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/calendar/usuario1/-McmaJMMnalrNcS5KT3u",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "calendar",
@@ -649,12 +674,13 @@
                     }
                 },
                 "url": {
-                    "raw": "http://localhost:3001/api/new-user/",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/new-user/",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "new-user",
@@ -679,12 +705,13 @@
                     }
                 },
                 "url": {
-                    "raw": "http://localhost:3001/api/utils/movetask/usuario1",
-                    "protocol": "http",
+                    "raw": "https://api-node-firebase.herokuapp.com/api/utils/movetask/usuario1",
+                    "protocol": "https",
                     "host": [
-                        "localhost"
+                        "api-node-firebase",
+                        "herokuapp",
+                        "com"
                     ],
-                    "port": "3001",
                     "path": [
                         "api",
                         "utils",

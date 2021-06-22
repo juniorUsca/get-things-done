@@ -78,7 +78,7 @@ router.get('/:user_id', (request, response) => {
                 for (const [key, value] of Object.entries(snapshot.val())) {
                     //console.log(key, value);
                     data.push({
-                        id: key,
+                        tickerfile_id: key,
                         description: value.description,
                         date_remainder: value.date_remainder,
                         status_done: value.status_done,
@@ -133,7 +133,7 @@ router.get('/:user_id/:tickerfile_id', (request, response) => {
         db.ref("users").child(user_id).child('tickerfile').child(tickerfile_id).get().then((snapshot) => {
             if (snapshot.exists()) {
                 let data = {
-                    index_id: snapshot.key,
+                    tickerfile_id: snapshot.key,
                     ...snapshot.val()
                 }
                 return response.status(200).json({
@@ -199,7 +199,7 @@ router.patch('/:user_id/:tickerfile_id', (request, response) => {
 
                 db.ref('users').child(user_id).child('tickerfile').child(tickerfile_id).child('updated_at').set((new Date()).toISOString())
                 let data = {
-                    index_id: snapshot.key,
+                    tickerfile_id: snapshot.key,
                     ...snapshot.val(),
                     ...(description && { description: description }),
                     ...(status_done && { status_done: status_done }),
