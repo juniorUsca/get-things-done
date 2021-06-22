@@ -13,8 +13,8 @@ class  CrearFondo extends StatelessWidget {
           begin: Alignment(-1.0, -1.0),
           end: Alignment(2.0, 3.0),
           colors: <Color> [
-            Colors.lightBlue,
-            Colors.purpleAccent
+            Colors.green,
+            Colors.lightBlue
           ]
         )
       ),

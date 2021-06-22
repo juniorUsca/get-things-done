@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:getthingsdone/Views/form_view/form_page.dart';
 import 'package:getthingsdone/Views/lateral_menu_view/menu_lateral.dart';
 import 'background.dart';
-
 
 class HomePage extends StatelessWidget {
   @override
@@ -13,10 +13,14 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 3.0,
         iconTheme: IconThemeData(color: Colors.green),
-        actions: [IconButton(
+        actions: [
+          IconButton(
             color: Colors.green,
             icon: Icon(Icons.add),
-            onPressed: () {}
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => FormPage()),
+            ),
           )
         ],
       ),
@@ -174,10 +178,9 @@ class HomePage extends StatelessWidget {
           ListTile(
             title: Text(text,
                 style: TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 0.8
-                )),
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w700,
+                    letterSpacing: 0.8)),
             subtitle: Text(
               subtitle,
               textAlign: TextAlign.justify,
