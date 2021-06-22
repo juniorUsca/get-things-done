@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=C:\src\flutter"
-export "FLUTTER_APPLICATION_PATH=C:\Users\Home\flutter-login-home-animation-master\dribbbledanimation"
+export "FLUTTER_ROOT=D:\SDK Flutter\flutter"
+export "FLUTTER_APPLICATION_PATH=D:\Web Avanzado\FInal\g\get-things-done\MobileApp\Login-Animated\dribbbledanimation"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"
