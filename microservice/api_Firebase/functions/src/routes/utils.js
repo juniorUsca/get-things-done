@@ -38,6 +38,7 @@ router.patch('/movetask/:user_id', (request, response) => {
                 }
                 db.ref('users').child(user_id).child(task2).child(task1_id).set(data)
                 db.ref("users").child(user_id).child(task1).child(task1_id).remove()
+                data[`${task2}`] = task1_id
                 return response.status(200).json({
                     data: data,
                     message: 'success'

@@ -26,7 +26,7 @@ router.get('/:user_id', (request, response) => {
                 for (const [key, value] of Object.entries(snapshot.val())) {
                     //console.log(key, value);
                     data.push({
-                        id: key,
+                        inbox_id: key,
                         description: value.description,
                         status_done: value.status_done,
                         created_at: value.created_at,
@@ -80,7 +80,7 @@ router.get('/:user_id/:inbox_id', (request, response) => {
         db.ref("users").child(user_id).child('inbox').child(inbox_id).get().then((snapshot) => {
             if (snapshot.exists()) {
                 let data = {
-                    index_id: snapshot.key,
+                    inbox_id: snapshot.key,
                     ...snapshot.val()
                 }
                 return response.status(200).json({
@@ -189,7 +189,7 @@ router.patch('/:user_id/:inbox_id', (request, response) => {
                     db.ref('users').child(user_id).child('inbox').child(inbox_id).child('status_done').set(status_done)
                 db.ref('users').child(user_id).child('inbox').child(inbox_id).child('updated_at').set((new Date()).toISOString())
                 let data = {
-                    index_id: snapshot.key,
+                    inbox_id: snapshot.key,
                     ...snapshot.val(),
                     ...(description && { description: description }),
                     ...(status_done && { status_done: status_done }),

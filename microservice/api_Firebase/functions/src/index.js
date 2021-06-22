@@ -6,6 +6,7 @@ import inbox from './routes/inbox'
 import tickerfile from './routes/tickerfile'
 import incubator from './routes/incubator'
 import calendar from './routes/calendar'
+import todo from './routes/todo'
 import utils from './routes/utils'
 
 const app = express()
@@ -94,6 +95,9 @@ app.use('/api/incubator/', incubator)
 
 //Ruta calendar
 app.use('/api/calendar/', calendar)
+
+//Ruta todo
+app.use('/api/todo/', todo)
 
 //Ruta utils
 app.use('/api/utils/', utils)
