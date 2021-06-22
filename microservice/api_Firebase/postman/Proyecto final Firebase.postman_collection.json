@@ -36,6 +36,28 @@
 			"response": []
 		},
 		{
+			"name": "listar un inbox",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/inbox/usuario1/-MckTaaiySBNpETRl7_e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"inbox",
+						"usuario1",
+						"-MckTaaiySBNpETRl7_e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "listar inbox",
 			"request": {
 				"method": "GET",
@@ -110,12 +132,116 @@
 			"response": []
 		},
 		{
-			"name": "listar un inbox",
+			"name": "crear tickerfile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"presentar trabajo-ticker2\",\r\n    \"date_remainder\": \"2021-06-21T23:07:10.637Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tickerfile/usuario1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tickerfile",
+						"usuario1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar tickerfile",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3001/api/inbox/usuario1/-MckTaaiySBNpETRl7_e",
+					"raw": "http://localhost:3001/api/tickerfile/usuario1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tickerfile",
+						"usuario1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar un tickerfile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/tickerfile/usuario1/-Mckwfd1RnaBj_Y_EUQY",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tickerfile",
+						"usuario1",
+						"-Mckwfd1RnaBj_Y_EUQY"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar tickerfile",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"regar plantas editados84\",\r\n    \"status_done\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tickerfile/usuario1/-Mckwfd1RnaBj_Y_EUQY",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tickerfile",
+						"usuario1",
+						"-Mckwfd1RnaBj_Y_EUQY"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar tickerfile",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/inbox/usuario1/-Mckcfbn3pa2aToumyXn",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -125,7 +251,7 @@
 						"api",
 						"inbox",
 						"usuario1",
-						"-MckTaaiySBNpETRl7_e"
+						"-Mckcfbn3pa2aToumyXn"
 					]
 				}
 			},
@@ -138,7 +264,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": \"usuario7\"\r\n}",
+					"raw": "{\r\n    \"user_id\": \"usuario-nuevo\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -176,6 +302,28 @@
 					"path": [
 						"api",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "blanck",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/tickerfile/usuario1/-Mckwfd1RnaBj_Y_EUQY",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tickerfile",
+						"usuario1",
+						"-Mckwfd1RnaBj_Y_EUQY"
 					]
 				}
 			},
