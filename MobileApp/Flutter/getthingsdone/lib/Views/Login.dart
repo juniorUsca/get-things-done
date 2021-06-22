@@ -37,7 +37,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlutterLogin(
       title: 'GetThingsDone',
-      logo: 'assets/images/logo.png',
+      logo: 'assets/images/ecorp-lightblue.png',
       onLogin: _authUser,
       onSignup: _authUser,
       loginProviders: <LoginProvider>[
