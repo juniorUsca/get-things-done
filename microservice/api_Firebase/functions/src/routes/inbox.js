@@ -88,9 +88,9 @@ router.get('/:user_id/:inbox_id', (request, response) => {
                     message: 'success'
                 })
             } else {
-                return response.status(200).json({
-                    data: 'No data available',
-                    message: 'success'
+                return response.status(404).json({
+                    data: 'Error inbox not found',
+                    message: 'error'
                 })
             }
         }).catch((error) => {
