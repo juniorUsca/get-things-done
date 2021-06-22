@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:getthingsdone/Views/calendar_view/calendario_page.dart';
 import 'package:getthingsdone/Views/lateral_menu_view/background_lateral.dart';
-
 
 class LateraPage extends StatefulWidget {
   @override
@@ -119,6 +119,9 @@ void selectedItem(BuildContext context, int index) {
   Navigator.of(context).pop();
   switch (index) {
     case 0:
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => Calendar(),
+      ));
       break;
   }
 }
