@@ -59,3 +59,12 @@ Como podemos ver tenemos dos opciones el primero nos ayuda a escoger donde quere
 El segundo nos ayuda a crear un nuevo aplicativo el flutter, donde al seleccionar este nos abrirá nuestro Explorador de Archivos para que podamos escoger donde vamos a crear nuestro proyecto y después de escoger nos saldrá una barra para colocar el nombre del proyecto y listo.
 ![folder](https://user-images.githubusercontent.com/65316299/122508551-c544e400-cfc7-11eb-88fc-bf7d0143767e.jpg)
 ![nameFlutter](https://user-images.githubusercontent.com/65316299/122508594-cfff7900-cfc7-11eb-89c3-8df9f2916b0b.jpg)
+
+## Login con Google
+
+Para realizar el login con google, es necesario seguir los siguientes pasos:
+bash
+    keytool -list -v -keystore C:\Users\USERNAME\.android\debug.keystore -alias androiddebugkey
+
+Esto generara una clave unica, el Keytool es una administración de claves y certificados para generar y administrar claves y certificados SSL.
+Esta clave tendra que ser previamente colocada en nuestro FireBase en la parte de configuracion SHA-1, esto permitira que todas las APPS que se ejecuten desde este PC que tiene esta clave puedan tener acceso al LogIn con Google.
