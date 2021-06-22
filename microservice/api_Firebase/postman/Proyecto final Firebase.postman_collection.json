@@ -384,6 +384,132 @@
 			"response": []
 		},
 		{
+			"name": "crear calendar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"cita 2 - dentista\",\r\n    \"date\": \"2021-06-30\",\r\n    \"start_time\": \"18:00:00\",\r\n    \"final_time\": \"20:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/calendar/usuario1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"calendar",
+						"usuario1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar calendar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/calendar/usuario1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"calendar",
+						"usuario1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar un calendar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/calendar/usuario1/-McmaJMMnalrNcS5KT3u",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"calendar",
+						"usuario1",
+						"-McmaJMMnalrNcS5KT3u"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar calendar",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"cita_editada\",\r\n    \"status_done\": true,\r\n    \"start_time\": \"12:20:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/calendar/usuario1/-McmaJMMnalrNcS5KT3u",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"calendar",
+						"usuario1",
+						"-McmaJMMnalrNcS5KT3u"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar calendar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/calendar/usuario1/-McmaJMMnalrNcS5KT3u",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"calendar",
+						"usuario1",
+						"-McmaJMMnalrNcS5KT3u"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "crear usuario",
 			"request": {
 				"method": "POST",
