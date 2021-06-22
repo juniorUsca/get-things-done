@@ -60,7 +60,7 @@ class _SignInPageState extends State<SignInPage> {
           TextButton(
               child: Text('Ya tengo una cuenta. Ir a Login...', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
               onPressed: () =>
-                  print('IR A LOGIN')),
+                  Navigator.pushReplacementNamed(context, 'login_page')),
           SizedBox(height: 100.0)
         ],
       ),
