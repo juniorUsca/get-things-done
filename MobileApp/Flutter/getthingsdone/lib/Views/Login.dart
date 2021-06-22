@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../Controllers/Controller.dart';
+import 'SigIn.dart';
 import 'background_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -61,7 +64,31 @@ class _LoginPageState extends State<LoginPage> {
               child: Text('Crear una nueva cuenta', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
               onPressed: () =>
                   Navigator.pushReplacementNamed(context, 'signin_page')),
-          SizedBox(height: 100.0)
+          SizedBox(height: 5.0),
+          Center(
+            child: Column(
+              children: [
+                OutlinedButton.icon(
+                  style: OutlinedButton.styleFrom(primary: Colors.red, backgroundColor: Colors.white),
+                  icon: Icon(FontAwesomeIcons.googlePlusG),
+                  label:  Text('Google', style: TextStyle(color: Colors.red)),
+                  onPressed: () {
+                    signInWithGoogle().then((result) {
+                      if (result != null) {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return SignInPage();
+                            },
+                          ),
+                        );
+                      }
+                    });
+                  },
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
