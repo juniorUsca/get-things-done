@@ -241,7 +241,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3001/api/inbox/usuario1/-Mckcfbn3pa2aToumyXn",
+					"raw": "http://localhost:3001/api/tickerfile/usuario1/-Mckcfbn3pa2aToumyXn",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -249,9 +249,135 @@
 					"port": "3001",
 					"path": [
 						"api",
-						"inbox",
+						"tickerfile",
 						"usuario1",
 						"-Mckcfbn3pa2aToumyXn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear incubator",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"presentar trabajo-ticker7\",\r\n    \"deadline\": \"2021-06-21T23:07:10.637Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/incubator/usuario1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"incubator",
+						"usuario1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar incubator",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/incubator/usuario1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"incubator",
+						"usuario1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar un incubator",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/incubator/usuario1/-McloDWzodFuZAvH-6KH",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"incubator",
+						"usuario1",
+						"-McloDWzodFuZAvH-6KH"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar incubator",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"regar plantas editados84\",\r\n    \"status_done\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/incubator/usuario1/-McloDWzodFuZAvH-6KH",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"incubator",
+						"usuario1",
+						"-McloDWzodFuZAvH-6KH"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar incubator",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/incubator/usuario1/-Mclog3qiiy7yu-Qhv0l",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"incubator",
+						"usuario1",
+						"-Mclog3qiiy7yu-Qhv0l"
 					]
 				}
 			},
@@ -310,10 +436,10 @@
 		{
 			"name": "blanck",
 			"request": {
-				"method": "PATCH",
+				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3001/api/tickerfile/usuario1/-Mckwfd1RnaBj_Y_EUQY",
+					"raw": "http://localhost:3001/api/inbox/usuario1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -321,9 +447,8 @@
 					"port": "3001",
 					"path": [
 						"api",
-						"tickerfile",
-						"usuario1",
-						"-Mckwfd1RnaBj_Y_EUQY"
+						"inbox",
+						"usuario1"
 					]
 				}
 			},
