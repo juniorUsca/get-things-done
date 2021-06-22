@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:getthingsdone/Views/SigIn.dart';
 import 'package:getthingsdone/Views/Welcome.dart';
@@ -5,9 +6,11 @@ import 'package:getthingsdone/provider/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'Views/Login.dart';
 import 'Views/SplashPage.dart';
+import 'Views/profile_Page.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -30,6 +33,7 @@ class MyApp extends StatelessWidget {
             '/welcome': (context) => WelcomePage(),
             '/login': (context) => LoginScreen(),
             '/sigin': (context) => SigIn(),
+            '/taskpage': (context) => ProfilePage(),
           },
         ),
       );
