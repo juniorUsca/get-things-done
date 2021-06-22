@@ -8,12 +8,13 @@ const welcome = () => {
                     <div className="contenedor">
                         <h1>GTD</h1>
                         <nav>
-                            <Link href="#"><a>Inicio</a></Link>
-                            <Link href="#"><a>Inicio</a></Link>
-                            <Link href="/main"><a>Calendario</a></Link>
-                            <Link href="#"><a>Imbox</a></Link>
-                            <Link href="#"><a></a></Link>
-                            <Link href="#"><a><img src="https://img.icons8.com/fluent-systems-filled/48/ffffff/menu.png" width="25px" /></a></Link>
+                            <ul>
+                                <li><Link href="#"><a>Inicio</a></Link></li>
+                                <li><Link href="/main"><a>Calendario</a></Link></li>
+                                <li><Link href="#"><a>Imbox</a></Link></li>
+                                <li><Link href="#"><a>xdddd</a></Link></li>
+                                <li><Link href="#"><img src="https://img.icons8.com/fluent-systems-filled/48/ffffff/menu.png" width="25px" /></Link></li>
+                            </ul>
                         </nav>
                     </div>
                 </div>
@@ -24,7 +25,7 @@ const welcome = () => {
                         <a href="#" className="Iniciar">Iniciar</a>
                     </secrion>
                     <div className="banner_img">
-                        <img src="#" alt=""/>
+                        <img src="http://pngimg.com/uploads/triangle/triangle_PNG30.png" width="25px" />
                     </div>
                 </section>
 
@@ -52,6 +53,39 @@ const welcome = () => {
 
                 body{
                     font-family: 'Roboto', 'Sans serif';
+                }
+
+                .banner_img{
+                    animation: movimiento 2.5s linear infinite;
+                }
+
+                .banner_img img{
+                    width: 500px;
+                    display: block;
+                }
+
+                #imgMenu {
+                    margin-top: 300px;
+                }
+
+                nav {
+                    text-align:center;
+
+                }
+                nav ul {
+                    display:inline-block;
+                    list-style:none;
+                }
+                nav ul li {
+                    float:left;
+                }
+
+                nav ul li a {
+                    padding-right: 5px;
+                }
+
+                nav ul li img {
+                    margin-top: -5px;
                 }
 
                 .contenedor{
