@@ -1,18 +1,50 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import "firebase/auth";
+import { loginWithGitHub } from "../firebase"
+import { loginWithFacebook } from "../firebase"
+import { loginWithGoogle } from "../firebase"
+import initFirebase from "../firebase";
+
+initFirebase();
 
 const SocialContainer = () => {
+
+  const handleClickGoogle = () => {
+    loginWithGoogle().then(user =>{
+      console.log(user)
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
+  const handleClickGithub = () => {
+    loginWithGitHub().then(user =>{
+      console.log(user)
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+  
+  const handleClickFacebook = () => {
+    loginWithFacebook().then(user =>{
+      console.log(user)
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
     return ( 
         <div>
             <div className="social-container">
-                <a href="#" className="social">
+                <a href="#" onClick={handleClickFacebook} className="social">
                     <FontAwesomeIcon icon={faFacebook} />
                 </a>
-                <a href="#" className="social">
+                <a href="#" onClick={handleClickGoogle} className="social">
                     <FontAwesomeIcon icon={faGoogle} />
                 </a>
-                <a href="#" className="social">
+                <a href="#" onClick={handleClickGithub} className="social">
                     <FontAwesomeIcon icon={faGithub} />
                 </a>
             </div>

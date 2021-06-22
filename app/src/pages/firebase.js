@@ -4,16 +4,16 @@ import "firebase/auth";
 import "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyArFGqGZ4phKYOQsA4UJN4UotS2djQ8lUo",
-    authDomain: "login-89a2d.firebaseapp.com",
-    projectId: "login-89a2d",
-    storageBucket: "login-89a2d.appspot.com",
-    messagingSenderId: "572463801506",
-    appId: "1:572463801506:web:5335a8c1e7b4daf18ba3fb",
-    measurementId: "G-C7LB2TNZVW"
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_PUBLIC_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
 };
 
-firebase.initializeApp(firebaseConfig)
+export default function initFirebase() {
+    if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+    }
+}
 
 export const loginWithGitHub = () => {
     const githubProvider = new firebase.auth.GithubAuthProvider()
@@ -22,5 +22,10 @@ export const loginWithGitHub = () => {
 export const loginWithFacebook = () => {
     const facebookbProvider = new firebase.auth.FacebookAuthProvider()
     return firebase.auth().signInWithPopup(facebookbProvider)
+}
+
+export const loginWithGoogle = () => {
+    const googleProvider = new firebase.auth.GoogleAuthProvider()
+    return firebase.auth().signInWithPopup(googleProvider)
 }
 
