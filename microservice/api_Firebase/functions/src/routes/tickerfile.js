@@ -211,9 +211,10 @@ router.patch('/:user_id/:tickerfile_id', (request, response) => {
                     message: 'success'
                 })
             } else {
-                return response.status(200).json({
-                    data: 'No data available',
-                    message: 'success'
+
+                return response.status(404).json({
+                    data: 'Error tickerfile not found',
+                    message: 'error'
                 })
             }
         }).catch((error) => {
