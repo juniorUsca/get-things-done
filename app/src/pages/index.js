@@ -1,17 +1,9 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { useEffect } from 'react';
 import Login from './components/LoginComponents/Login'
 import Register from './components/RegisterComponents/Register'
 import OverlayLogin from "./components/LoginComponents/OverlayLogin";
 import OverlayRegister from "./components/RegisterComponents/OverlayRegister";
-
-import firebase from "firebase/app";
-import "firebase/auth";
-import { loginWithGitHub } from "./firebase"
-import { loginWithFacebook } from "./firebase"
-
 const Index = ()=>{
 
   //Obtenemos los botones cuando se le haga click
@@ -51,22 +43,6 @@ const Index = ()=>{
   useEffect(()=>{
     handleClick()
   })
-
-const handleClickGithub = () => {
-  loginWithGitHub().then(user =>{
-    console.log(user)
-  }).catch(err => {
-    console.log(err)
-  })
-}
-
-const handleClickFacebook = () => {
-  loginWithFacebook().then(user =>{
-    console.log(user)
-  }).catch(err => {
-    console.log(err)
-  })
-}
 
   return (
     <div className="principalContainer">
