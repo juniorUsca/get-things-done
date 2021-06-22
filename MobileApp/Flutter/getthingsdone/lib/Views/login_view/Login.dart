@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:getthingsdone/Views/home_view/home_page.dart';
+import 'package:getthingsdone/bloc/login_bloc.dart';
+import 'package:getthingsdone/bloc/provider.dart';
 import '../../Controllers/Controller.dart';
 import 'background_page.dart';
 
@@ -20,6 +22,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _loginForm(BuildContext context) {
+    final bloc = Provider.of(context);
     final size = MediaQuery.of(context).size;
 
     return SingleChildScrollView(
@@ -52,16 +55,20 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.indigoAccent,
                         fontWeight: FontWeight.bold)),
                 SizedBox(height: 20.0),
-                _crearEmail(),
+                _crearEmail(bloc),
                 SizedBox(height: 30.0),
-                _crearPassword(),
+                _crearPassword(bloc),
                 SizedBox(height: 30.0),
                 _crearBoton()
               ],
             ),
           ),
           TextButton(
-              child: Text('Crear una nueva cuenta', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+              child: Text(
+                'Crear una nueva cuenta',
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
               onPressed: () =>
                   Navigator.pushReplacementNamed(context, 'signin_page')),
           SizedBox(height: 5.0),
@@ -69,9 +76,10 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: [
                 OutlinedButton.icon(
-                  style: OutlinedButton.styleFrom(primary: Colors.red, backgroundColor: Colors.white),
+                  style: OutlinedButton.styleFrom(
+                      primary: Colors.red, backgroundColor: Colors.white),
                   icon: Icon(FontAwesomeIcons.googlePlusG),
-                  label:  Text('Google', style: TextStyle(color: Colors.red)),
+                  label: Text('Google', style: TextStyle(color: Colors.red)),
                   onPressed: () {
                     signInWithGoogle().then((result) {
                       if (result != null) {
@@ -94,25 +102,31 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _crearEmail() {
+  Widget _crearEmail(LoginBloc bloc) {
     return StreamBuilder(
+      stream: bloc.emailStream,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return Container(
           padding: EdgeInsets.symmetric(horizontal: 20.0),
           child: TextField(
+            style: TextStyle(color: Colors.red),
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
                 icon: Icon(Icons.mail_outline, color: Colors.lightBlueAccent),
                 hintText: 'ejemplo@correo.com',
-                labelText: 'Correo electrónico'),
+                labelText: 'Correo electrónico',
+                counterText: snapshot.data,
+                errorText: snapshot.error),
+            onChanged: bloc.changeEmail,
           ),
         );
       },
     );
   }
 
-  Widget _crearPassword() {
+  Widget _crearPassword(LoginBloc bloc) {
     return StreamBuilder(
+      stream: bloc.passwordStream,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return Container(
           padding: EdgeInsets.symmetric(horizontal: 20.0),
@@ -121,6 +135,8 @@ class _LoginPageState extends State<LoginPage> {
             decoration: InputDecoration(
               icon: Icon(Icons.lock_outline, color: Colors.lightBlueAccent),
               labelText: 'Contraseña',
+              counterText: snapshot.data,
+              errorText: snapshot.error,
               suffixIcon: IconButton(
                 onPressed: () {
                   setState(() {
@@ -131,12 +147,14 @@ class _LoginPageState extends State<LoginPage> {
                     hidePassword ? Icons.visibility_off : Icons.visibility),
               ),
             ),
+            onChanged: bloc.changePassword,
           ),
         );
       },
     );
   }
-    Widget _crearBoton() {
+
+  Widget _crearBoton() {
     return StreamBuilder(
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return RaisedButton(
@@ -149,7 +167,7 @@ class _LoginPageState extends State<LoginPage> {
             elevation: 0.0,
             color: Colors.lightBlue,
             textColor: Colors.white,
-            onPressed: (){});
+            onPressed: () {});
       },
     );
   }
