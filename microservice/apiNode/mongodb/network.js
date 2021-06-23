@@ -11,6 +11,7 @@ router.get('/:collection/:id', get)
 router.post('/:collection', insert)
 router.put('/:collection/:id', update)
 router.put('/:collection/:id/push', updatePush)
+router.delete('/:collection', removeAll)
 router.delete('/:collection/:id', remove)
 
 
@@ -40,6 +41,11 @@ async function update(req, res, next) {
 
 async function updatePush(req, res, next) {
 	const data = await Store.updatePush(req.params.collection, req.params.id, req.body)
+	response.success(req, res, data, 200);
+}
+
+async function removeAll(req, res, next) {
+	const data = await Store.deleteAll(req.params.collection)
 	response.success(req, res, data, 200);
 }
 
