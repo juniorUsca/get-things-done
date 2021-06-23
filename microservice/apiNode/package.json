@@ -8,7 +8,8 @@
     "start": "node --es-module-specifier-resolution=node index.js",
     "dev": "nodemon --es-module-specifier-resolution=node index.js",
     "mongodb": "nodemon --es-module-specifier-resolution=node mongodb/index.js",
-    "test": "jest --detectOpenHandles --silent"
+    "test": "jest --detectOpenHandles --silent -- api.test.js",
+    "test-mongo": "jest --detectOpenHandles -- mongo.test.js"
   },
   "keywords": [],
   "author": "",

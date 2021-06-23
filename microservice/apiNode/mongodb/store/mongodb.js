@@ -1,5 +1,6 @@
 import pkgMongo from 'mongodb'
 import { config } from '../../config'
+import 'regenerator-runtime/runtime'
 const { MongoClient, ObjectId } = pkgMongo
 
 const MONGO_URI = config.mongo.uri
@@ -65,6 +66,12 @@ class MongoLib {
 		const db = await this.connect()
 		await db.collection(collection).deleteOne({ _id: ObjectId(id) })
 		return id
+	}
+
+	async deleteAll(collection) {
+		const db = await this.connect()
+		await db.collection(collection).deleteMany({})
+		return []
 	}
 }
 
