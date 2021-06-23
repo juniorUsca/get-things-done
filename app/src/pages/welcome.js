@@ -11,7 +11,7 @@ const welcome = () => {
                             <ul>
                                 <li><Link href="#"><a>Inicio</a></Link></li>
                                 <li><Link href="/main"><a>Calendario</a></Link></li>
-                                <li><Link href="#"><a>Imbox</a></Link></li>
+                                <li><Link href="inbox"><a>Imbox</a></Link></li>
                                 <li><Link href="#"><a>xdddd</a></Link></li>
                                 <li><Link href="#"><img src="https://img.icons8.com/fluent-systems-filled/48/ffffff/menu.png" width="25px" /></Link></li>
                             </ul>
