@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/Layout/layout' // Este componente nos permite mantener un mismo 
 import React, {useState} from 'react'
-
+//Método para obtener las tareas
 export async function getStaticProps() {
     const res = await fetch('http://localhost:3001/api/imbox')
     const data = await res.json()
@@ -17,16 +17,16 @@ export async function getStaticProps() {
     }
   
     return {
-      props: { data },
+      props: { data }, //Guardamos la data en los props para usarlo más adelante
     }
 }
-
+//Método principal a exportar que nos mostrará la página del inbox
 export default function Inbox({data}) {
     //Hook para reconocer edición de tarea
     const [editingRow, setEditingRow] = useState()
     //Hook para guardar nuevo valor para actualizar tarea
     const [updTask, setUpdTask] = useState("--")
-    
+    //Método para crear una nueva tarea en el microservicio
     async function newTask(event) {
         event.preventDefault()
         await fetch(
@@ -43,7 +43,7 @@ export default function Inbox({data}) {
         )
         window.location.reload()
     }
-    
+    //Método para actualizar una tarea en el microservicio
     async function updateTask(id) {
         event.preventDefault()
         await fetch(
@@ -60,12 +60,12 @@ export default function Inbox({data}) {
         )
         window.location.reload()
     }
-    
+    //Método para borrar una tarea en el microservicio
     async function deleteTask(id) {
             fetch(`http://localhost:3001/api/imbox/${id}`, { method: 'DELETE' })
             window.location.reload()
     }
-
+    //Método para controlar el valor de la tarea a editar
     const handleTaskChange = (event)=>{
         setUpdTask(event.target.value)
     }
