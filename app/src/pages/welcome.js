@@ -1,23 +1,12 @@
 import Link from 'next/link'
+import SnapBar from './SnapBar'
 
 const welcome = () => {
     return ( 
         <div id="Banner">
             <div className="bg_animate">
-                <div className="header_nav">
-                    <div className="contenedor">
-                        <h1>GTD</h1>
-                        <nav>
-                            <ul>
-                                <li><Link href="#"><a>Inicio</a></Link></li>
-                                <li><Link href="/main"><a>Calendario</a></Link></li>
-                                <li><Link href="inbox"><a>Imbox</a></Link></li>
-                                <li><Link href="#"><a>xdddd</a></Link></li>
-                                <li><Link href="#"><img src="https://img.icons8.com/fluent-systems-filled/48/ffffff/menu.png" width="25px" /></Link></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+
+                <SnapBar/>
 
                 <section className="banner contenedor">
                     <secrion className="banner_title">
