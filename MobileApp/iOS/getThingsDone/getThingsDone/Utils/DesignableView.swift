@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class DesignableView: UIView {
+class DesignableView: UIView { // Propiedades para estilo de View en Storyboard
     @IBInspectable var shadowColor: UIColor = UIColor.clear {
         didSet {
             layer.shadowColor = shadowColor.cgColor
