@@ -1,63 +1,53 @@
-import React from "react";
-import Head from "next/head";
+import Head from 'next/head'
+import Link from 'next/link'
+import Layout from '../components/Layout/layout' // Este componente nos permite mantener un mismo 
 
-
-const welcome = () => {
+export default function Inbox() {
     return (
-
-        <div>
+        <Layout>
             <Head>
-                    // Responsive meta tag
-                    <meta name="viewport" content="width=device-width, initial-scale=1" />
-                    //  bootstrap CDN
-                    <link
-                        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-                        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-                        crossorigin="anonymous" 
-                    />
-                    <script
-                            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-                            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-                            crossorigin="anonymous">
-                    </script>
-                    <script src="pages/agregar.js"></script>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                {/*
+                <link
+                    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+                    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+                    crossorigin="anonymous"
+                />
+                <script
+                    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+                    crossorigin="anonymous">
+                </script>
+                <script src="pages/agregar.js"></script>
+            */}
+                <title>Inbox</title>
             </Head>
-
-            <body>
-                <div class="titulo">
-                        
-                </div>
-
-                <div class="principal">
-                    <div class="wrap">
-                        <form class="formulario" action="agregarTarea">
-                            <input type="text" id="tareaInput" placeholder="Agrega tu tarea"></input>
-                            <button type="button" class="btn btn-primary btn-lg">Agregar Tarea</button>
-                        </form>
+            <h1 className="text-3xl">Inbox</h1>
+            <div>
+                <body>
+                    <div className="titulo">
                     </div>
-                
-                </div>
-                <div class="tareas">
-                    <div class="wrap">
-                        <ul class="list-group" id="lista">
-                            <li class="list-group-item">1: Comprar comida para el perro</li>
-                            <li class="list-group-item">2: Realizar la tarea</li>
-                            <li class="list-group-item">3: Llamar a mi padre</li>
-                        </ul>
+                    <div className="principal">
+                        <div className="wrap">
+                            <form className="formulario" action="agregarTarea">
+                                <input type="text" id="tareaInput" placeholder="Agrega tu tarea"></input>
+                                <button type="button" className="btn btn-primary btn-lg">Agregar Tarea</button>
+                            </form>
+                        </div>
+
                     </div>
-                </div>
-                
-            </body>
-                
-            
+                    <div className="tareas">
+                        <div className="wrap">
+                            <ul className="list-group" id="lista">
+                                <li className="list-group-item">1: Comprar comida para el perro</li>
+                                <li className="list-group-item">2: Realizar la tarea</li>
+                                <li className="list-group-item">3: Llamar a mi padre</li>
+                            </ul>
+                        </div>
+                    </div>
 
-
-        </div>
-        
-        
+                </body>
+            </div>
+        </Layout>
     )
-
 }
-
-
-export default welcome;
