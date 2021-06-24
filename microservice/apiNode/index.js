@@ -1,7 +1,7 @@
 import express from 'express'
-import inbox from './routes/inbox'
+// import inbox from './routes/inbox'
 // import todo from './routes/todo'
-import todo from './routes/components/todo/network'
+import inbox from './routes/components/inbox/network'
 
 const app = express()
 app.use(express.json())
@@ -56,17 +56,17 @@ let gtd = [
 //Rutas
 
 //Ruta principal
-app.use('/api/', todo)
+// app.use('/api/inbox', nboxComponet)
 
 //Ruta inbox
 app.use('/api/inbox/', inbox)
 
-if(process.env.NODE_ENV != "test"){
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
-    });
+if (process.env.NODE_ENV != "test") {
+	app.listen(PORT, () => {
+		console.log(`Server running on port ${PORT}`);
+	});
 }
 
-export {app}
+export { app }
 
 export default gtd
