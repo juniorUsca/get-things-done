@@ -1,9 +1,12 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const apiIndex = require('./routes/inbox.js')
 
 const errorHandler = require('./utils/middlewares/errorHandlers')
 const notFoundHandler = require('./utils/middlewares/notFoundHandler')
+
+app.use(cors())
 
 app.use(express.json());
 
