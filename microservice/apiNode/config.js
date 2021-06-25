@@ -11,4 +11,7 @@ export const config = {
 		host: process.env.MONGO_SRV_HOST || 'localhost',
 		port: process.env.MONGO_SRV_PORT || 3002,
 	},
+	jwt: {
+		secret: process.env.JWT_SECRET || 'jwtsecreto!',
+	},
 }

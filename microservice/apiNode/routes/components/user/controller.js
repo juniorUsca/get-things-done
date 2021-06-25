@@ -1,4 +1,6 @@
 import bcrypt from 'bcrypt'
+import { sign } from '../../../auth/index'
+
 const COLLECTION = "users" // Colleccion o tabla en Mongodb
 
 const Controller = (injectedStore) => {
@@ -18,7 +20,7 @@ const Controller = (injectedStore) => {
 			.then((isEqual) => {
 				if (isEqual === true) {
 					// generar token
-					return { "res": "Login valido" }
+					return sign(JSON.parse(JSON.stringify(user)))
 				} else {
 					throw new error('Informacion invalida')
 				}

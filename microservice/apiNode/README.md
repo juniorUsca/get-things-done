@@ -25,3 +25,5 @@ Abrir [http://localhost:3002](http://localhost:3002) en el navegador o postman
 > Nota: En la carpeta 'apiNode/postman/' hay un archivo txt que puede importar en postman y probar el funcionamiento. Primero intente ejecutar el método create para generar datos de prueba en la API
 
 > Nota: En el archivo .env coloque las credenciales de su base de datos en MongoDB. Se recomienda usar Atlas como proveedor.
+
+> Nota: Para que ciertas rutas funcionen es necesario estar logeado. En el Postman se muestra un request Login. Usar este para logearse. Por defecto, todas las contraseñas son "password".
