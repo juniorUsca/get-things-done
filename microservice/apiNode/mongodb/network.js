@@ -13,6 +13,7 @@ router.put('/:collection/:id', update)
 router.put('/:collection/:id/push', updatePush)
 router.delete('/:collection', removeAll)
 router.delete('/:collection/:id', remove)
+router.delete('/:collection/:id/embedded', removeEmbedded)
 
 
 async function list(req, res, next) {
@@ -35,7 +36,7 @@ async function insert(req, res, next) {
 }
 
 async function update(req, res, next) {
-	const data = await Store.update(req.params.collection, req.params.id, req.body)
+	const data = await Store.updateCollection(req.params.collection, req.params.id, req.body)
 	response.success(req, res, data, 200);
 }
 
@@ -51,5 +52,12 @@ async function removeAll(req, res, next) {
 
 async function remove(req, res, next) {
 	const data = await Store.delete(req.params.collection, req.params.id)
+	response.success(req, res, data, 200);
+}
+
+async function removeEmbedded(req, res, next) {
+	const query = req.body.query || {}
+	const removeData = req.body.data || {}
+	const data = await Store.deleteEmbedded(req.params.collection, req.params.id, query, removeData)
 	response.success(req, res, data, 200);
 }

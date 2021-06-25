@@ -3,11 +3,11 @@ import axios from 'axios';
 function createRemoteDB(host, port) {
 	const URL = 'http://' + host + ':' + port
 
-	function list(table, data) {
+	function list(table, data = "") {
 		return req('GET', table, data, "")
 	}
 
-	function get(table, id, data) {
+	function get(table, id, data = "") {
 		return req('GET', table, data, id)
 	}
 

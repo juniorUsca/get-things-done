@@ -50,7 +50,7 @@ class MongoLib {
 		return result.ops[0]
 	}
 
-	async update(collection, id, data) {
+	async updateCollection(collection, id, data) {
 		const db = await this.connect()
 		const result = await db.collection(collection).updateOne({ _id: ObjectId(id) }, { $set: data }, { upsert: true })
 		return result.upsertedId || id
@@ -66,6 +66,12 @@ class MongoLib {
 		const db = await this.connect()
 		await db.collection(collection).deleteOne({ _id: ObjectId(id) })
 		return id
+	}
+
+	async deleteEmbedded(collection, query, data) {
+		const db = await this.connect()
+		const result = await db.collection(collection).updateOne(query, { $pull: data }, { upsert: true })
+		return result.upsertedId || id
 	}
 
 	async deleteAll(collection) {
