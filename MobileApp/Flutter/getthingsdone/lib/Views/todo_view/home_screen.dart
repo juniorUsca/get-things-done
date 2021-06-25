@@ -52,14 +52,26 @@ class HomeScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              todoController
+                                  .updatePatchCompleted(todo)
+                                  .then((value) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                        duration:
+                                            const Duration(milliseconds: 500),
+                                        content: Text('$value')));
+                              });
+                            },
                             child: buildCallContainer(
                               'patch',
                               Color(0xFFFFE0B2),
                             ),
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              todoController.updatePutCompleted(todo);
+                            },
                             child: buildCallContainer(
                               'put',
                               Color(0xFFE1BEE7),

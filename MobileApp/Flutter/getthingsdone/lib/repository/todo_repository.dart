@@ -20,4 +20,44 @@ class TodoRepository implements Repository {
     }
     return todoList;
   }
+
+  @override
+  Future<String> patchCompleted(Todo todo) async {
+    var url = Uri.parse('$dataURL/todos/${todo.id}');
+    String resData = '';
+    await http.patch(
+      url,
+      body: {
+        'completed': (!todo.completed).toString(),
+      },
+      headers: {'Authorization': 'your_token'},
+    ).then((response) {
+      //homescreem -> data
+      Map<String, dynamic> result = json.decode(response.body);
+      print(result);
+      return resData = result['completed'];
+    });
+
+    return resData;
+  }
+
+  @override
+  Future<String> putCompleted(Todo todo) async {
+    var url = Uri.parse('$dataURL/todos/${todo.id}');
+    String resData = '';
+    await http.patch(
+      url,
+      body: {
+        'completed': (!todo.completed).toString(),
+      },
+      headers: {'Authorization': 'your_token'},
+    ).then((response) {
+      //homescreem -> data
+      Map<String, dynamic> result = json.decode(response.body);
+      print(result);
+      return resData = result['completed'];
+    });
+
+    return resData;
+  }
 }
