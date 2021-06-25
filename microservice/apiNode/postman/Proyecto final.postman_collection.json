@@ -18,7 +18,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"query\":{\n        \"nombre\": \"Rodrigo\"\n    },\n    \"project\":{\n        \"inbox\": true,\n        \"nombre\": true\n    }\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -26,14 +26,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3002/usuarios",
+							"raw": "http://localhost:3002/users/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3002",
 							"path": [
-								"usuarios"
+								"users",
+								""
 							]
 						}
 					},
@@ -49,7 +50,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"project\":\n    {\n        \"nombre\": 1,\n        \"inbox\": 1\n    }\n}",
+							"raw": "{\n    \"project\":\n    {\n        \"name\": 1,\n        \"inbox\": 1\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -57,15 +58,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3002/usuarios/60ccc16fdf0d79459056c41b",
+							"raw": "http://localhost:3002/users/60d4a82a1f1d1e470188b5f9",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3002",
 							"path": [
-								"usuarios",
-								"60ccc16fdf0d79459056c41b"
+								"users",
+								"60d4a82a1f1d1e470188b5f9"
 							]
 						}
 					},
@@ -76,16 +77,26 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\": {\n        \"inbox.inbox_id\":\"60d4c089924bddad516ecfa9\"\n    },\n    \"data\": {\n        \"inbox.$.inbox_id\": \"60d4c089924bddad516ecfa9\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:3002/usuarios/60cc436303996bcb09992f6a",
+							"raw": "http://localhost:3002/users/60d4a82a1f1d1e470188b5f9/embedded",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3002",
 							"path": [
-								"usuarios",
-								"60cc436303996bcb09992f6a"
+								"users",
+								"60d4a82a1f1d1e470188b5f9",
+								"embedded"
 							]
 						}
 					},
@@ -98,7 +109,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user_id\": 1,\n    \"inbox\": [\n        {\n            \"description\": \"regar plantas\",\n            \"created_at\": \"Tue Jun 15 2021 01:58:02 GMT-0500\"\n        },\n        {\n            \"description\": \"hacer mercado\",\n            \"created_at\": \"Tue Jun 15 2021 02:28:02 GMT-0500\"\n        },\n        {\n            \"description\": \"presentar laboratorio dwa\",\n            \"created_at\": \"Tue Jun 15 2021 02:58:02 GMT-0500\"\n        }\n    ],\n    \"calendar\": [],\n    \"ticke_file\": [],\n    \"incubator\": [],\n    \"next_actions\": [],\n    \"nombre\": \"Rodrigo\"\n}",
+							"raw": "{\n    \"todo\": \"Comprar los viveres\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -106,14 +117,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3002/usuarios/",
+							"raw": "http://localhost:3002/users/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3002",
 							"path": [
-								"usuarios",
+								"users",
 								""
 							]
 						}
@@ -156,7 +167,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"inbox\":\n        {\n        \"description\": \"No felicitar a mi primo\",\n        \"created_at\": \"Tue Jun 15 2021 02:28:02 GMT-0500\"\n        }\n}",
+							"raw": "{\n    \"inbox\":\n        {\n        \"description\": \"Ir a la piscina\",\n        \"created_at\": \"Tue Jun 15 2021 02:28:02 GMT-0500\"\n        }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -164,15 +175,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3002/usuarios/60cbdc9ca8db8312ee504318/push",
+							"raw": "http://localhost:3002/users/60d4dcc0e4362df74bab9a90/push",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3002",
 							"path": [
-								"usuarios",
-								"60cbdc9ca8db8312ee504318",
+								"users",
+								"60d4dcc0e4362df74bab9a90",
 								"push"
 							]
 						}
@@ -182,194 +193,418 @@
 			]
 		},
 		{
-			"name": "crear inbox",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"description\": \"presentar trabajo\" \r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "inbox",
+			"item": [
+				{
+					"name": "crear inbox",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ0YTgyYTFmMWQxZTQ3MDE4OGI1ZjkiLCJuYW1lIjoiUnViZW4gUm9kcmlnbyIsImVtYWlsIjoicm9kcmlnb3Rlc0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQwNSQ1L3JzZ0kvc1VCd3ZtVHdHU2RGcUx1RU1iYmtEdkh1U25POHZCNUtQV1NvekJXU3habzkxeSIsImlhdCI6MTYyNDU4MzkwN30.Eqp2DK2qhbRgD2q6qZiw6ftngKdfc6XUEoj0m_5u1tw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"todo\": \"Almorzar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/inbox/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"inbox",
+								""
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3001/api/inbox/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3001",
-					"path": [
-						"api",
-						"inbox",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "listar inbox",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3001/api/inbox/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3001",
-					"path": [
-						"api",
-						"inbox",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "editar inbox",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"description\": \"regar plantas editado\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "actualizar inbox",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ0YTgyYTFmMWQxZTQ3MDE4OGI1ZjkiLCJuYW1lIjoiUnViZW4gUm9kcmlnbyIsImVtYWlsIjoicm9kcmlnb3Rlc0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQwNSQ1L3JzZ0kvc1VCd3ZtVHdHU2RGcUx1RU1iYmtEdkh1U25POHZCNUtQV1NvekJXU3habzkxeSIsImlhdCI6MTYyNDU4MzkwN30.Eqp2DK2qhbRgD2q6qZiw6ftngKdfc6XUEoj0m_5u1tw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"todo\": \"Hacer la cena puntual\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/inbox/60d4a82a1f1d1e470188b5f9/60d52eab7bd62926ae3842e2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"inbox",
+								"60d4a82a1f1d1e470188b5f9",
+								"60d52eab7bd62926ae3842e2"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3001/api/inbox/1/11",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3001",
-					"path": [
-						"api",
-						"inbox",
-						"1",
-						"11"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "eliminar inbox",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3001/api/inbox/1/11",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3001",
-					"path": [
-						"api",
-						"inbox",
-						"1",
-						"11"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "listar un inbox",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3001/api/inbox/1/11",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3001",
-					"path": [
-						"api",
-						"inbox",
-						"1",
-						"11"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "listar todo",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"project\":\n    {\n        \"nombre\": true,\n        \"inbox\": true\n    }\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "listar inbox",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ0YTgyYTFmMWQxZTQ3MDE4OGI1ZjkiLCJuYW1lIjoiUnViZW4gUm9kcmlnbyIsImVtYWlsIjoicm9kcmlnb3Rlc0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQwNSQ1L3JzZ0kvc1VCd3ZtVHdHU2RGcUx1RU1iYmtEdkh1U25POHZCNUtQV1NvekJXU3habzkxeSIsImlhdCI6MTYyNDU4MzkwN30.Eqp2DK2qhbRgD2q6qZiw6ftngKdfc6XUEoj0m_5u1tw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/inbox/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"inbox",
+								""
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3001/api/60cc215038703f42faf2b838",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3001",
-					"path": [
-						"api",
-						"60cc215038703f42faf2b838"
-					]
+				{
+					"name": "listar inbox por usuario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/inbox/60d4dcc0e4362df74bab9a90",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"inbox",
+								"60d4dcc0e4362df74bab9a90"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar inbox",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ0YTgyYTFmMWQxZTQ3MDE4OGI1ZjkiLCJuYW1lIjoiUnViZW4gUm9kcmlnbyIsImVtYWlsIjoicm9kcmlnb3Rlc0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQwNSQ1L3JzZ0kvc1VCd3ZtVHdHU2RGcUx1RU1iYmtEdkh1U25POHZCNUtQV1NvekJXU3habzkxeSIsImlhdCI6MTYyNDU4MzkwN30.Eqp2DK2qhbRgD2q6qZiw6ftngKdfc6XUEoj0m_5u1tw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/inbox/60d4dcc0e4362df74bab9a90/60d4fe44cab0ff75bf7ba22d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"inbox",
+								"60d4dcc0e4362df74bab9a90",
+								"60d4fe44cab0ff75bf7ba22d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar un inbox",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ0ZGNjMGU0MzYyZGY3NGJhYjlhOTAiLCJuYW1lIjoiRWR1YXJkbyBSb2RyaWd1ZXoiLCJlbWFpbCI6ImVkdWFyZG90ZXN0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDA1JFZQN0FzSFNPQWQ4c0JqQWlNaXpWR3VQa01DRHROU3RVWkVUZWdkY1VQWjhCZC5pNFlOMkpPIiwiaWF0IjoxNjI0NTgzMTU4fQ.qsl4aD-SKQ0hb8WxCQWS0lKK0YFW1nvPVXjZh6iA-Sg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/inbox/60d4f9f477031664f128f057",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"inbox",
+								"60d4f9f477031664f128f057"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "listar un todo",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"query\":{\n        \"nombre\": \"Rodrigo\"\n    },\n    \"project\":{\n        \"inbox\": true,\n        \"nombre\": true\n    }\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "user",
+			"item": [
+				{
+					"name": "listar un usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/user/60d4dcc0e4362df74bab9a90",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"60d4dcc0e4362df74bab9a90"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3001/api/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3001",
-					"path": [
-						"api",
-						""
-					]
+				{
+					"name": "lista usuarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Mauricio\",\n    \"email\": \"mauricio@gmail.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ0ZGNjMGU0MzYyZGY3NGJhYjlhOTAiLCJuYW1lIjoiRWR1YXJkbyBSb2RyaWd1ZXoiLCJlbWFpbCI6ImVkdWFyZG90ZXN0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDA1JFZQN0FzSFNPQWQ4c0JqQWlNaXpWR3VQa01DRHROU3RVWkVUZWdkY1VQWjhCZC5pNFlOMkpPIiwiaWF0IjoxNjI0NTgzMTU4fQ.qsl4aD-SKQ0hb8WxCQWS0lKK0YFW1nvPVXjZh6iA-Sg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Eduardo\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/60d4dcc0e4362df74bab9a90",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"60d4dcc0e4362df74bab9a90"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGQ0ZGNjMGU0MzYyZGY3NGJhYjlhOTAiLCJuYW1lIjoiRWR1YXJkbyBSb2RyaWd1ZXoiLCJlbWFpbCI6ImVkdWFyZG90ZXN0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDA1JFZQN0FzSFNPQWQ4c0JqQWlNaXpWR3VQa01DRHROU3RVWkVUZWdkY1VQWjhCZC5pNFlOMkpPIiwiaWF0IjoxNjI0NTgzMTU4fQ.qsl4aD-SKQ0hb8WxCQWS0lKK0YFW1nvPVXjZh6iA-Sg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/user/60d518a3749f90cb13078be8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"60d518a3749f90cb13078be8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"eduardotest@gmail.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
