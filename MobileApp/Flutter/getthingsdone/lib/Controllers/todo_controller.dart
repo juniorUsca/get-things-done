@@ -20,4 +20,8 @@ class TodoController {
   Future<String> deleteTodo(Todo todo) async {
     return _repository.deletedTodo(todo);
   }
+
+  Future<String> postTodo(Todo todo) async {
+    return _repository.postTodo(todo);
+  }
 }
