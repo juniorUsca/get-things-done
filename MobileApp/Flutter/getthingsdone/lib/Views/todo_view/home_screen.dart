@@ -78,7 +78,14 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              todoController.deleteTodo(todo).then((value) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                        duration: Duration(microseconds: 500),
+                                        content: Text('$value')));
+                              });
+                            },
                             child: buildCallContainer(
                               'del',
                               Color(0xFFFFCDD2),

@@ -16,4 +16,8 @@ class TodoController {
   Future<String> updatePutCompleted(Todo todo) async {
     return _repository.putCompleted(todo);
   }
+
+  Future<String> deleteTodo(Todo todo) async {
+    return _repository.deletedTodo(todo);
+  }
 }
