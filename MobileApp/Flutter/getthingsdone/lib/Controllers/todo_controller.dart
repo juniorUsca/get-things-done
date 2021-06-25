@@ -8,4 +8,12 @@ class TodoController {
   Future<List<Todo>> fetchTodoList() async {
     return _repository.getTodoList();
   }
+
+  Future<String> updatePatchCompleted(Todo todo) async {
+    return _repository.patchCompleted(todo);
+  }
+
+  Future<String> updatePutCompleted(Todo todo) async {
+    return _repository.putCompleted(todo);
+  }
 }
