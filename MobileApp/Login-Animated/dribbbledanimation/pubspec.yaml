@@ -43,6 +43,16 @@ flutter:
   - assets/avatars/avatar-5.jpg
   - assets/avatars/avatar-6.jpg
   - assets/avatars/default-avatar.jpg
+  - img/ramen.jpg
+  - img/sniker.jpg
+  - img/pollo.jpg
+  - img/helado-chocolate.jpg
+  - img/torta.jpg
+  - img/chicharron.jpg
+  - img/fondo-comida.jpg
+  - img/hambur.jpg
+  - img/promosion.jpg
+  - img/palomitas-maiz.jpg
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 

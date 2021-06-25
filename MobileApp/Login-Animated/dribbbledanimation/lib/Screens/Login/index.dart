@@ -10,6 +10,8 @@ import '../../Components/SignInButton.dart';
 import '../../Components/WhiteTick.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
+import 'package:dribbbledanimation/Components/nosotros.dart';
+import 'package:dribbbledanimation/Components/comida.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key key}) : super(key: key);
@@ -71,6 +73,41 @@ class LoginScreenState extends State<LoginScreen>
     return (new WillPopScope(
         onWillPop: _onWillPop,
         child: new Scaffold(
+          appBar: new AppBar(
+            title: new Text('Lista de comidas'),
+            backgroundColor: Colors.orange,
+          ),
+          drawer: new Drawer(
+            child: new ListView(
+              children: <Widget>[
+                new UserAccountsDrawerHeader(
+                  accountName: new Text('Ejercicios'),
+                  accountEmail: new Text('codigoalphacol@gmail.com'),
+                  decoration: new BoxDecoration(
+                      image: new DecorationImage(
+                    fit: BoxFit.fill,
+                    image: AssetImage('img/fondo-comida.jpg'),
+                  )),
+                ),
+                new Divider(),
+                new ListTile(
+                  title: new Text("Comida"),
+                  trailing: new Icon(Icons.cake_sharp),
+                  onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (BuildContext context) => Comida(),
+                  )),
+                ),
+                new Divider(),
+                new ListTile(
+                  title: new Text("Soporte"),
+                  trailing: new Icon(Icons.help),
+                  onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (BuildContext context) => Nosotros(),
+                  )),
+                ),
+              ],
+            ),
+          ),
           body: new Container(
               decoration: new BoxDecoration(
                 image: backgroundImage,
