@@ -38,6 +38,7 @@ dependencies:
   table_calendar: ^3.0.0
   # dummy package to test https://github.com/NearHuscarl/flutter_login/issues/35
   provider: ^5.0.0
+  http: ^0.13.3
 
 dev_dependencies:
   flutter_test:
