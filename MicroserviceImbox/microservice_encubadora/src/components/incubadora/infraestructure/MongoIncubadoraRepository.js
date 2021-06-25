@@ -1,19 +1,19 @@
 const MongoLib = require('../../../lib/mongo')
 
-class MongoCalendaryRepository {
+class MongoIncubadoraRepository {
   constructor () {
-    this.collection = 'Calendary'
+    this.collection = 'IncubadoraTareas'
     this.mongoDB = new MongoLib()
   }
 
-  async add (calendary) {
-    await this.mongoDB.create(this.collection, calendary)
-    return { ...calendary }
+  async add (incubadora) {
+    await this.mongoDB.create(this.collection, incubadora)
+    return { ...incubadora }
   }
 
-  async update ( id, calendary ) {
-    await this.mongoDB.update(this.collection, id, calendary)
-    return { ...calendary }
+  async update ( id, incubadora ) {
+    await this.mongoDB.update(this.collection, id, incubadora)
+    return { ...incubadora }
   }
 
   async delete ({ id }) {
@@ -31,4 +31,4 @@ class MongoCalendaryRepository {
 
 }
 
-module.exports = MongoCalendaryRepository
+module.exports = MongoIncubadoraRepository
