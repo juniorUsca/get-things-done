@@ -22,6 +22,8 @@ export async function getStaticProps() {
 }
 //Método principal a exportar que nos mostrará la página del inbox
 export default function Inbox({data}) {
+    //Hook para guardar las tareas
+    const [tasks, setTasks] = useState(data)
     //Hook para reconocer edición de tarea
     const [editingRow, setEditingRow] = useState()
     //Hook para guardar nuevo valor para actualizar tarea
@@ -29,7 +31,7 @@ export default function Inbox({data}) {
     //Método para crear una nueva tarea en el microservicio
     async function newTask(event) {
         event.preventDefault()
-        await fetch(
+        const res = await fetch(
             'http://localhost:3001/api/imbox',
             {
                 method: 'POST',
@@ -41,12 +43,14 @@ export default function Inbox({data}) {
                 })
             }
         )
-        window.location.reload()
+        const data = await res.json()
+        console.log(tasks.concat(data.data))
+        setTasks(tasks.concat(data.data))
     }
     //Método para actualizar una tarea en el microservicio
-    async function updateTask(id) {
+    async function updateTask(id,row) {
         event.preventDefault()
-        await fetch(
+        const res = await fetch(
             `http://localhost:3001/api/imbox/${id}`,
             {
                 method: 'PUT',
@@ -58,12 +62,16 @@ export default function Inbox({data}) {
                 })
             }
         )
-        window.location.reload()
+        const data = await res.json()
+        const list = []
+        tasks.map((item,numOfRow) => {numOfRow==editingRow ? list.push(data.data) : list.push(item)})
+        setTasks(list)
+        setEditingRow()
     }
     //Método para borrar una tarea en el microservicio
-    async function deleteTask(id) {
+    async function deleteTask(id,row) {
             fetch(`http://localhost:3001/api/imbox/${id}`, { method: 'DELETE' })
-            window.location.reload()
+            setTasks([].concat(tasks.slice(0, row),tasks.slice(row + 1)))
     }
     //Método para controlar el valor de la tarea a editar
     const handleTaskChange = (event)=>{
@@ -106,7 +114,7 @@ export default function Inbox({data}) {
                     <div class="tareas">
                         <div class="wrap">
                             <ul class="list-group" id="lista">                      
-                                {data.map((item,row) => (
+                                {tasks.map((item,row) => (
                                     <li class="list-group-item">
                                         {
                                             editingRow == row ? 
@@ -119,7 +127,7 @@ export default function Inbox({data}) {
                                                 <span onClick={()=>{setEditingRow(row);setUpdTask(item.tarea)}}>
                                                     {item.tarea}
                                                 </span>
-                                                <button class="btnEliminar" onClick={()=>deleteTask(item._id)}>X</button>
+                                                <button class="btnEliminar" onClick={()=>deleteTask(item._id,row)}>X</button>
                                             </div>
                                         }
                                     </li>
