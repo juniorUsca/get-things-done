@@ -63,8 +63,10 @@ export default function Inbox({data}) {
             }
         )
         const data = await res.json()
+        const dataWithId = {_id:id, ...data.data}
         const list = []
-        tasks.map((item,numOfRow) => {numOfRow==editingRow ? list.push(data.data) : list.push(item)})
+        console.log(dataWithId)
+        tasks.map((item,numOfRow) => {numOfRow==editingRow ? list.push(dataWithId) : list.push(item)})
         setTasks(list)
         setEditingRow()
     }
