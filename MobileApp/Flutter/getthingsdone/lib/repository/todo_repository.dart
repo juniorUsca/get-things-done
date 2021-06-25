@@ -7,6 +7,16 @@ import 'package:http/http.dart' as http;
 
 class TodoRepository implements Repository {
   String dataURL = 'https://jsonplaceholder.typicode.com';
+  @override
+  Future<String> deletedTodo(Todo todo) async {
+    var url = Uri.parse('$dataURL/todos/${todo.id}');
+    var result = 'false';
+    await http.delete(url).then((value) {
+      print(value.body);
+      return result = 'true';
+    });
+    return result;
+  }
 
   @override
   Future<List<Todo>> getTodoList() async {
