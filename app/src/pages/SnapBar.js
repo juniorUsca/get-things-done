@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
+import Link from "next/link";
 
 export default function SnapBar ()  {
     const [isNavVisible, setNavVisibility] = useState(false);
@@ -30,18 +31,17 @@ export default function SnapBar ()  {
   return (
     <>
       <header className="Header">
-        <h1 className="name">GTD</h1>
         <CSSTransition
           in={!isSmallScreen || isNavVisible}
           timeout={350}
           classNames="NavAnimation"
-          unmountOnExit
-        >
+          unmountOnExit>
+            
           <nav className="Nav">
-            <a href="/">Home</a>
-            <a href="/">Articles</a>
-            <a href="/">About</a>
-            <button>Logout</button>
+            <Link href="index"><a>Home</a></Link>
+            <Link href="calendar"><a>Calendario</a></Link>
+            <Link href="inbox"><a>Inbox</a></Link>
+            <Link href="index"><button>Logout</button></Link>
           </nav>
         </CSSTransition>
         <button onClick={toggleNav} className="Burger">
@@ -51,6 +51,7 @@ export default function SnapBar ()  {
 
     <style jsx >{`
         .Header {
+          margin-top: 10px;
           position: fixed;
           top: 0; /* Stick it to the top */
           max-height: 70px;
