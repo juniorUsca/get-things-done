@@ -4,9 +4,10 @@
  */
  module.exports = ({ ImboxRepository }) => {
     const fecha = new Date()
-    return async ({id},{created_at },{tarea}) => {
+    return async ({id},{user_id, created_at },{tarea}) => {
       const imboxUpdate = {
         tarea: tarea,
+        user_id: user_id,
         created_at: created_at,
         updated_at: fecha
       }  
