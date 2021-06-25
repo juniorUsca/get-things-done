@@ -70,4 +70,15 @@ class TodoRepository implements Repository {
 
     return resData;
   }
+
+  @override
+  Future<String> postTodo(Todo todo) async {
+    print('${todo.toJson()}');
+    var url = Uri.parse('$dataURL/todos/');
+    var result = '';
+    var response = await http.post(url, body: todo.toJson());
+    print(response.statusCode);
+    print(response.body);
+    return 'true';
+  }
 }

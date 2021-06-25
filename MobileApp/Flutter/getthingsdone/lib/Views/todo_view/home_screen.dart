@@ -28,7 +28,10 @@ class HomeScreen extends StatelessWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Todo todo = Todo(userId: 3, title: 'sample post', completed: false);
+          todoController.postTodo(todo);
+        },
         child: Icon(Icons.add),
       ),
     );
