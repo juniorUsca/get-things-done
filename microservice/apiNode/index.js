@@ -2,6 +2,7 @@ import express from 'express'
 // import inbox from './routes/inbox'
 // import todo from './routes/todo'
 import inbox from './routes/components/inbox/network'
+import user from './routes/components/user/network'
 
 const app = express()
 app.use(express.json())
@@ -60,6 +61,9 @@ let gtd = [
 
 //Ruta inbox
 app.use('/api/inbox/', inbox)
+
+//Ruta user
+app.use('/api/user/', user)
 
 if (process.env.NODE_ENV != "test") {
 	app.listen(PORT, () => {
