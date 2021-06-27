@@ -6,10 +6,10 @@ const NotFound = () => {
             <div id="notfound">
                 <div className="notfound">
                     <div className="notfound-404">
-                        <h1>404</h1>
-                        <h2>Page not found</h2>
+                        <h1>Ooops...</h1>
+                        <h2>¿Te perdiste?</h2>
                     </div>
-                    <Link href="/"><a>Homepage</a></Link>
+                    <Link href="/"><a>Regresa a nosotros</a></Link>
                 </div>
             </div>
         </div>
