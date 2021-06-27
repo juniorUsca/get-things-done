@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="width" constant="150" id="Hk8-J3-efV"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urs-tS-DeI" customClass="DesignableView" customModule="getThingsDone" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urs-tS-DeI">
                                 <rect key="frame" x="15" y="405" width="384" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="usuario1@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Xi-lh-Hu0">
