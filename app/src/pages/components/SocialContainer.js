@@ -38,13 +38,13 @@ const SocialContainer = () => {
     return ( 
         <div>
             <div className="social-container">
-                <a href="#" onClick={handleClickFacebook} className="social">
+                <a href="#" onClick={handleClickFacebook} className="social" id="facebook">
                     <FontAwesomeIcon icon={faFacebook} />
                 </a>
-                <a href="#" onClick={handleClickGoogle} className="social">
+                <a href="#" onClick={handleClickGoogle} className="social" id="google">
                     <FontAwesomeIcon icon={faGoogle} />
                 </a>
-                <a href="#" onClick={handleClickGithub} className="social">
+                <a href="#" onClick={handleClickGithub} className="social" id="github">
                     <FontAwesomeIcon icon={faGithub} />
                 </a>
             </div>

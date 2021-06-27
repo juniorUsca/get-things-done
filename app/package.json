@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.35",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",
+    "cypress": "^7.6.0",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4"
   }

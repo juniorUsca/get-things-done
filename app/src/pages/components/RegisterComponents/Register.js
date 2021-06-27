@@ -9,10 +9,10 @@ const Register = () => {
                     <h1>Create Account</h1>
                     <SocialContainer />
                     <span>or use your email for registration</span>
-                    <input type="text" placeholder="Name" />
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
-                    <button>Sign Up</button>
+                    <input name="name" type="text" placeholder="Name" />
+                    <input name="emailReg" type="email" placeholder="Email" />
+                    <input name="passwordReg" type="password" placeholder="Password" />
+                    <button id="sign-up">Sign Up</button>
                 </form>
             </div>
             

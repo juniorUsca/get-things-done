@@ -40,7 +40,7 @@ export default function SnapBar ()  {
           <nav className="Nav">
             <Link href="index"><a>Home</a></Link>
             <Link href="calendar"><a>Calendario</a></Link>
-            <Link href="inbox"><a>Inbox</a></Link>
+            <Link href="report"><a>Report?</a></Link>
             <Link href="index"><button>Logout</button></Link>
           </nav>
         </CSSTransition>

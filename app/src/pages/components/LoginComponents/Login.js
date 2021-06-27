@@ -8,10 +8,10 @@ const Login = (props) => {
             <h1>Sign In</h1>
             <SocialContainer />
             <span>or use your account</span>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input name="email" type="email" placeholder="Email" />
+            <input name="password" type="password" placeholder="Password" />
             <a href="#">Forgot your password?</a>
-            <button>Sign In</button>
+            <button id="sign-in">Sign In</button>
           </form>
 
           <style jsx >{`
