@@ -1,29 +1,30 @@
-import React from "react";
+import React from 'react'
 import SnapBar from './SnapBar'
 
 const report = () => {
-    return (
-    <div className = "contenedor">
-        <SnapBar/>
-        <div className="reports">  
-            <form>
-            <label for="fname">Nombre</label>
-                <input type="text" id="fname" name="firstname" placeholder="Tu nombre.."/>
+  return (
+    <div className="contenedor">
+      <SnapBar />
+      <div className="reports">
+        <form>
+          <label htmlFor="fname">Nombre</label>
+          <input type="text" id="fname" name="firstname" placeholder="Tu nombre.." />
 
-                <label for="problem">Causa</label>
-                <select id="problem" name="problem">
-                <option value="">------</option>
-                <option value="australia">Problema</option>
-                <option value="canada">Duda</option>
-                </select>
+          <label htmlFor="problem">Causa</label>
+          <select id="problem" name="problem">
+            <option value="">------</option>
+            <option value="australia">Problema</option>
+            <option value="canada">Duda</option>
+          </select>
 
-                <label for="subject">Contexto</label>
-                <textarea id="subject" name="subject" placeholder="Cuentanos que sucede.." rows="7"/>
+          <label htmlFor="subject">Contexto</label>
+          <textarea id="subject" name="subject" placeholder="Cuentanos que sucede.." rows="7" />
 
-                <button id="sub-mit" type="submit">Enviar</button>
-            </form>
-        </div>
-            <style jsx >{`
+          <button id="sub-mit" type="submit">Enviar</button>
+        </form>
+      </div>
+      <style jsx>
+        {`
                 * {
                     box-sizing: border-box;
                     font-family: Arial, Helvetica, sans-serif;
@@ -77,9 +78,9 @@ const report = () => {
                     font-size : 20px;
                 }
             `}
-            </style>
-        </div>
-        
-     );
+      </style>
+    </div>
+
+  )
 }
-export default report;
+export default report

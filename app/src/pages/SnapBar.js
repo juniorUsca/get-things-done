@@ -1,32 +1,33 @@
-import React, { useState, useEffect } from "react";
-import { CSSTransition } from "react-transition-group";
-import Link from "next/link";
+/* eslint-disable @typescript-eslint/no-use-before-define */
+import React, { useState, useEffect } from 'react'
+import { CSSTransition } from 'react-transition-group'
+import Link from 'next/link'
 
-export default function SnapBar ()  {
-    const [isNavVisible, setNavVisibility] = useState(false);
-    const [isSmallScreen, setIsSmallScreen] = useState(false);
+export default function SnapBar() {
+  const [isNavVisible, setNavVisibility] = useState(false)
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
 
-    useEffect(() => {
-      const mediaQuery = window.matchMedia("(max-width: 700px)");
-      mediaQuery.addListener(handleMediaQueryChange);
-      handleMediaQueryChange(mediaQuery);
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 700px)')
+    mediaQuery.addListener(handleMediaQueryChange)
+    handleMediaQueryChange(mediaQuery)
 
-      return () => {
-        mediaQuery.removeListener(handleMediaQueryChange);
-      };
-    }, []);
+    return () => {
+      mediaQuery.removeListener(handleMediaQueryChange)
+    }
+  }, [])
 
-    const handleMediaQueryChange = mediaQuery => {
-      if (mediaQuery.matches) {
-        setIsSmallScreen(true);
-      } else {
-        setIsSmallScreen(false);
-      }
-    };
+  const handleMediaQueryChange = (mediaQuery) => {
+    if (mediaQuery.matches) {
+      setIsSmallScreen(true)
+    } else {
+      setIsSmallScreen(false)
+    }
+  }
 
-    const toggleNav = () => {
-      setNavVisibility(!isNavVisible);
-    };
+  const toggleNav = () => {
+    setNavVisibility(!isNavVisible)
+  }
 
   return (
     <>
@@ -35,21 +36,23 @@ export default function SnapBar ()  {
           in={!isSmallScreen || isNavVisible}
           timeout={350}
           classNames="NavAnimation"
-          unmountOnExit>
-            
+          unmountOnExit
+        >
+
           <nav className="Nav">
-            <Link href="index"><a>Home</a></Link>
-            <Link href="calendar"><a>Calendario</a></Link>
-            <Link href="report"><a>Report?</a></Link>
-            <Link href="index"><button>Logout</button></Link>
+            <Link href="index">Home</Link>
+            <Link href="calendar">Calendario</Link>
+            <Link href="report">Report?</Link>
+            <Link href="index"><button type="button">Logout</button></Link>
           </nav>
         </CSSTransition>
-        <button onClick={toggleNav} className="Burger">
-            🗈
+        <button type="button" onClick={toggleNav} className="Burger">
+          🗈
         </button>
       </header>
 
-    <style jsx >{`
+      <style jsx>
+        {`
         .Header {
           margin-top: 10px;
           position: fixed;
@@ -171,7 +174,7 @@ export default function SnapBar ()  {
           transition: opacity 350ms, transform 350ms;
         }
       `}
-    </style>
+      </style>
     </>
-  );
+  )
 }

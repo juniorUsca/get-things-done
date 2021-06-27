@@ -1,55 +1,52 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import "firebase/auth";
-import { loginWithGitHub } from "../firebase"
-import { loginWithFacebook } from "../firebase"
-import { loginWithGoogle } from "../firebase"
-import initFirebase from "../firebase";
+import { faFacebook, faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons'
+import 'firebase/auth'
+import initFirebase, { loginWithGitHub, loginWithFacebook, loginWithGoogle } from '../firebase'
 
-initFirebase();
+initFirebase()
 
 const SocialContainer = () => {
-
   const handleClickGoogle = () => {
-    loginWithGoogle().then(user =>{
+    loginWithGoogle().then((user) => {
       console.log(user)
-    }).catch(err => {
+    }).catch((err) => {
       console.log(err)
     })
   }
 
   const handleClickGithub = () => {
-    loginWithGitHub().then(user =>{
+    loginWithGitHub().then((user) => {
       console.log(user)
-    }).catch(err => {
+    }).catch((err) => {
       console.log(err)
     })
   }
-  
+
   const handleClickFacebook = () => {
-    loginWithFacebook().then(user =>{
+    loginWithFacebook().then((user) => {
       console.log(user)
-    }).catch(err => {
+    }).catch((err) => {
       console.log(err)
     })
   }
 
-    return ( 
-        <div>
-            <div className="social-container">
-                <a href="#" onClick={handleClickFacebook} className="social" id="facebook">
-                    <FontAwesomeIcon icon={faFacebook} />
-                </a>
-                <a href="#" onClick={handleClickGoogle} className="social" id="google">
-                    <FontAwesomeIcon icon={faGoogle} />
-                </a>
-                <a href="#" onClick={handleClickGithub} className="social" id="github">
-                    <FontAwesomeIcon icon={faGithub} />
-                </a>
-            </div>
+  return (
+    <div>
+      <div className="social-container">
+        <a href="#1" onClick={handleClickFacebook} className="social" id="facebook">
+          <FontAwesomeIcon icon={faFacebook} />
+        </a>
+        <a href="#2" onClick={handleClickGoogle} className="social" id="google">
+          <FontAwesomeIcon icon={faGoogle} />
+        </a>
+        <a href="#3" onClick={handleClickGithub} className="social" id="github">
+          <FontAwesomeIcon icon={faGithub} />
+        </a>
+      </div>
 
-            <style jsx >{`
+      <style jsx>
+        {`
         
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
         * {
@@ -71,9 +68,9 @@ const SocialContainer = () => {
         }
       `}
       </style>
-        </div>
-        
-    );
+    </div>
+
+  )
 }
- 
-export default SocialContainer;
+
+export default SocialContainer
