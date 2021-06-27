@@ -20,7 +20,7 @@ const report = () => {
                 <label for="subject">Contexto</label>
                 <textarea id="subject" name="subject" placeholder="Cuentanos que sucede.." rows="7"/>
 
-                <button type="submit">Enviar</button>
+                <button id="sub-mit" type="submit">Enviar</button>
             </form>
         </div>
             <style jsx >{`
