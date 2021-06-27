@@ -1,46 +1,46 @@
-import React from 'react'
-import { useEffect } from 'react';
+/* eslint-disable no-undef */
+import React, { useEffect } from 'react'
+
 import Login from './components/LoginComponents/Login'
 import Register from './components/RegisterComponents/Register'
-import OverlayLogin from "./components/LoginComponents/OverlayLogin";
-import OverlayRegister from "./components/RegisterComponents/OverlayRegister";
-const Index = ()=>{
+import OverlayLogin from './components/LoginComponents/OverlayLogin'
+import OverlayRegister from './components/RegisterComponents/OverlayRegister'
 
-  //Obtenemos los botones cuando se le haga click
-  const signIn = () => {   
-
+const Index = () => {
+  // Obtenemos los botones cuando se le haga click
+  const signIn = () => {
     return auth
-     .signInWithEmailAndPassword("usuario1@gmail.com", "12345678")
-     .then((response) => {
-      setUser(response.user);
-      return response.user;
-     })
-     .catch((error) => {
-      return { error };
-     });
-   };
-
-  //Facebook
-
-  //Obtenemos los botones cuando se le haga click
-    const handleClick = ()=> {
-    const signUpButton = document.getElementById('signUp');
-    const signInButton = document.getElementById('signIn');
-    const container = document.getElementById('container');
-    
-    //Agregamos clases para el desplazamiento
-    signUpButton.addEventListener('click', () => {
-      container.classList.add("right-panel-active");
-    });
-    
-    signInButton.addEventListener('click', () => {
-      container.classList.remove("right-panel-active");
-    });
+      .signInWithEmailAndPassword('usuario1@gmail.com', '12345678')
+      .then((response) => {
+        setUser(response.user)
+        return response.user
+      })
+      .catch((error) => {
+        return { error }
+      })
   }
 
-  //Al montarse el componente inicializamos los botones
-  //Para evitar el error de undefined en los botones
-  useEffect(()=>{
+  // Facebook
+
+  // Obtenemos los botones cuando se le haga click
+  const handleClick = () => {
+    const signUpButton = document.getElementById('signUp')
+    const signInButton = document.getElementById('signIn')
+    const container = document.getElementById('container')
+
+    // Agregamos clases para el desplazamiento
+    signUpButton.addEventListener('click', () => {
+      container.classList.add('right-panel-active')
+    })
+
+    signInButton.addEventListener('click', () => {
+      container.classList.remove('right-panel-active')
+    })
+  }
+
+  // Al montarse el componente inicializamos los botones
+  // Para evitar el error de undefined en los botones
+  useEffect(() => {
     handleClick()
   })
 
@@ -48,33 +48,34 @@ const Index = ()=>{
     <div className="principalContainer">
       <div className="container" id="container">
 
-        {/*LOGIN DE USUARIO*/}
+        {/* LOGIN DE USUARIO */}
         <Login signIn={signIn} />
 
-        {/*REGISTRO DE USUARIO*/}
+        {/* REGISTRO DE USUARIO */}
         <Register />
-        
-        {/*MENSAJES DE BIENVENIDA*/}
+
+        {/* MENSAJES DE BIENVENIDA */}
         <div className="overlay-container">
-          
+
           <div className="overlay">
 
-            {/*OVERLAY REGISTER*/}
-            <OverlayRegister handleClick={handleClick}/>
+            {/* OVERLAY REGISTER */}
+            <OverlayRegister handleClick={handleClick} />
 
-            {/*OVERLAY LOGIN*/}
-            <OverlayLogin handleClick={handleClick}/>
+            {/* OVERLAY LOGIN */}
+            <OverlayLogin handleClick={handleClick} />
 
           </div>
         </div>
       </div>
 
       {/*
-        Los siguientes estilos son locales, 
+        Los siguientes estilos son locales,
         no afectan a otros componentes
       */}
 
-      <style jsx >{`
+      <style jsx>
+        {`
         
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
         * {
@@ -275,8 +276,7 @@ const Index = ()=>{
 
       </style>
     </div>
-  );
+  )
 }
 
 export default Index
-

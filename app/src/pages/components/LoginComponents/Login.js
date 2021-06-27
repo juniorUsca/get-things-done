@@ -1,20 +1,21 @@
 import React from 'react'
-import SocialContainer from '../SocialContainer';
+import SocialContainer from '../SocialContainer'
 
-const Login = (props) => {
-    return ( 
-        <div className="form-container sign-in-container">
-          <form action="#">
-            <h1>Sign In</h1>
-            <SocialContainer />
-            <span>or use your account</span>
-            <input name="email" type="email" placeholder="Email" />
-            <input name="password" type="password" placeholder="Password" />
-            <a href="#">Forgot your password?</a>
-            <button id="sign-in">Sign In</button>
-          </form>
+const Login = () => {
+  return (
+    <div className="form-container sign-in-container">
+      <form action="#">
+        <h1>Sign In</h1>
+        <SocialContainer />
+        <span>or use your account</span>
+        <input name="email" type="email" placeholder="Email" />
+        <input name="password" type="password" placeholder="Password" />
+        <a href="/">Forgot your password?</a>
+        <button type="button" id="sign-in">Sign In</button>
+      </form>
 
-          <style jsx >{`
+      <style jsx>
+        {`
         
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
         * {
@@ -215,8 +216,8 @@ const Login = (props) => {
 
       </style>
 
-        </div>
-    );
+    </div>
+  )
 }
 
-export default Login;
+export default Login
