@@ -10,6 +10,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 // screens
 import Login from './../screens/Login';
+import Signup from './../screens/Signup';
+import Welcome from './../screens/Welcome';
 
 const Stack = createStackNavigator();
 
@@ -34,10 +36,24 @@ const RootStack = () => {
               },
             }}
           >
+             {storedCredentials ? (
+              <>
+              <Stack.Screen
+                options={{
+                  headerTintColor: primary,
+                }}
+                name="Welcome"
+                component={Welcome}
+              />
+              </>
+              
+            ) : (
               <>
                 <Stack.Screen name="Login" component={Login} />
+                <Stack.Screen name="Signup" component={Signup} />
                 
               </>
+               )}
           </Stack.Navigator>
         </NavigationContainer>
       )}
