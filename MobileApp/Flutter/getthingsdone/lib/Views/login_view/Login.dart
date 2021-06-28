@@ -48,10 +48,10 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  //Future<Null> _logOut() async {
-  //   await facebookSignIn.logOut();
-  //   _showMessage('Logged out.');
-  // }
+  Future<Null> _logOut() async {
+    await facebookSignIn.logOut();
+    _showMessage('Logged out.');
+  }
 
   void _showMessage(String message) {
     setState(() {

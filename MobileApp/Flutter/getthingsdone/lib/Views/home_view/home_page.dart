@@ -1,9 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+
 import 'package:getthingsdone/Views/form_view/form_page.dart';
 import 'package:getthingsdone/Views/lateral_menu_view/menu_lateral.dart';
 import 'background.dart';
 
 class HomePage extends StatelessWidget {
+  static final FacebookLogin facebookSignIn = new FacebookLogin();
+
+  Future<Null> _logOut() async {
+    await facebookSignIn.logOut();
+    _showMessage('Logged out.');
+  }
+
+  void _showMessage(String message) {
+    //setState(() {
+    //_message = message;
+    //});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -193,6 +209,14 @@ class HomePage extends StatelessWidget {
                 onPressed: () {},
                 label: const Text(''),
                 icon: Icon(Icons.favorite_outline, color: Colors.green),
+              ),
+              OutlinedButton.icon(
+                style: OutlinedButton.styleFrom(
+                    primary: Colors.blue, backgroundColor: Colors.blue),
+                icon: Icon(FontAwesomeIcons.facebook),
+                label:
+                    Text('Cerrar Sesion', style: TextStyle(color: Colors.blue)),
+                onPressed: _logOut,
               ),
               TextButton.icon(
                 onPressed: () {},
