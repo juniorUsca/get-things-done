@@ -17,16 +17,13 @@
 		D8CFB34B26893CA50017754F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFB34926893CA50017754F /* HomeViewController.swift */; };
 		D8CFB34C26893CA50017754F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFB34A26893CA50017754F /* LogInViewController.swift */; };
 		D8CFB351268943970017754F /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFB350268943970017754F /* InboxViewController.swift */; };
-		D8CFB35426894CAE0017754F /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFB35326894CAE0017754F /* Inbox.swift */; };
+		D8CFB35726895C680017754F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8CFB35526895C680017754F /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		481A57F6267999CA001C9018 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
-		481A57F82679B48D001C9018 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DesignableView.swift; path = Utils/DesignableView.swift; sourceTree = "<group>"; };
 		48A78521267996E60080B2A6 /* getThingsDone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = getThingsDone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A78524267996E60080B2A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48A78526267996E60080B2A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		48A78528267996E60080B2A6 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = ViewControllers/LogInViewController.swift; sourceTree = "<group>"; };
 		48A7852B267996E60080B2A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48A7852D267996E60080B2A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48A78530267996E60080B2A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,7 +34,7 @@
 		D8CFB34926893CA50017754F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = getThingsDone/ViewControllers/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		D8CFB34A26893CA50017754F /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = getThingsDone/ViewControllers/LogInViewController.swift; sourceTree = SOURCE_ROOT; };
 		D8CFB350268943970017754F /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InboxViewController.swift; path = getThingsDone/Utils/InboxViewController.swift; sourceTree = SOURCE_ROOT; };
-		D8CFB35326894CAE0017754F /* Inbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
+		D8CFB35626895C680017754F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		EDEFF282AB3572A46AFFABD6 /* Pods-getThingsDone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getThingsDone.release.xcconfig"; path = "Target Support Files/Pods-getThingsDone/Pods-getThingsDone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +99,7 @@
 				48A7852D267996E60080B2A6 /* Assets.xcassets */,
 				48A7852F267996E60080B2A6 /* LaunchScreen.storyboard */,
 				48A78532267996E60080B2A6 /* Info.plist */,
+				D8CFB35526895C680017754F /* Model.xcdatamodeld */,
 			);
 			path = getThingsDone;
 			sourceTree = "<group>";
@@ -117,7 +115,6 @@
 		D8CFB35226894C510017754F /* Modelos */ = {
 			isa = PBXGroup;
 			children = (
-				D8CFB35326894CAE0017754F /* Inbox.swift */,
 			);
 			path = Modelos;
 			sourceTree = "<group>";
@@ -238,9 +235,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8CFB35426894CAE0017754F /* Inbox.swift in Sources */,
 				D8CFB351268943970017754F /* InboxViewController.swift in Sources */,
 				48A78525267996E60080B2A6 /* AppDelegate.swift in Sources */,
+				D8CFB35726895C680017754F /* Model.xcdatamodeld in Sources */,
 				48A78527267996E60080B2A6 /* SceneDelegate.swift in Sources */,
 				D8CFB34C26893CA50017754F /* LogInViewController.swift in Sources */,
 				D8CFB34B26893CA50017754F /* HomeViewController.swift in Sources */,
@@ -441,6 +438,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D8CFB35526895C680017754F /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D8CFB35626895C680017754F /* Model.xcdatamodel */,
+			);
+			currentVersion = D8CFB35626895C680017754F /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 48A78519267996E60080B2A6 /* Project object */;
 }
