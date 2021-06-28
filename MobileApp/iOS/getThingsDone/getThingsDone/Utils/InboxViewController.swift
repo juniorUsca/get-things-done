@@ -8,6 +8,13 @@
 
 import UIKit
 
+class InboxTableViewCell:UITableViewCell{
+    @IBOutlet weak var txtDescripcion: UILabel!
+    @IBOutlet weak var txtNumero: UILabel!
+    @IBOutlet weak var txtFecha: UILabel!
+    @IBOutlet weak var txtTitle: UILabel!
+}
+
 class InboxViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tablaInbox: UITableView!
@@ -37,7 +44,20 @@ class InboxViewController: UIViewController,UITableViewDelegate, UITableViewData
         if inboxs.count == 0{
             cell.textLabel?.text = "No hay nada todavia"
         }else{
-            cell.textLabel?.text = inboxs[indexPath.row].descripcion
+            let date = inboxs[indexPath.row].created_at!
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "YY/MM/dd"
+            let fecha = dateFormatter.string(from: date)
+            let cellIn = tableView.dequeueReusableCell(withIdentifier: "inboxCell", for: indexPath) as! InboxTableViewCell
+            cellIn.txtDescripcion.text = inboxs[indexPath.row].descripcion
+            cellIn.txtTitle.text = "Inbox #"+String(indexPath.row+1)
+            cellIn.txtFecha.text =  fecha
+            cellIn.txtNumero.text = String(indexPath.row+1)
+            if !inboxs[indexPath.row].activo{
+                cellIn.txtNumero.backgroundColor = UIColor.red
+            }
+            cellIn.txtNumero.layer.cornerRadius = 5
+            return cellIn
         }
         
         return cell
