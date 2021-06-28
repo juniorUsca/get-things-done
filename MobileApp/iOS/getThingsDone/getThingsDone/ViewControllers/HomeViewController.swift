@@ -19,6 +19,9 @@ class HomeViewController: UIViewController {
         
     }
     
+    @IBAction func InboxTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "inboxSegue", sender: nil)
+    }
     @IBAction func closeSession(_ sender: Any) {
         
         UserDefaults.standard.removeObject(forKey: "username")
@@ -31,14 +34,5 @@ class HomeViewController: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
