@@ -35,7 +35,7 @@ export const InnerContainer = styled.View`
 
 export const WelcomeContainer = styled(InnerContainer)`
   padding: 25px;
-  padding-top: 10px;
+  padding-top: 5px;
   justify-content: center;
 `;
 
@@ -56,7 +56,7 @@ export const Avatar = styled.Image`
 `;
 
 export const WelcomeImage = styled.Image`
-  height: 50%;
+  height: 30%;
   max-width: 100%;
 `;
 
