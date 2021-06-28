@@ -38,7 +38,7 @@ class CrearFondo extends StatelessWidget {
           child: Column(
             children: <Widget>[
               SvgPicture.asset(
-                "assets/icons/cita.svg",
+                "assets/icons/gethings.svg",
                 height: 50,
                 width: 50,
               ),
