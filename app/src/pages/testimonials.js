@@ -1,8 +1,10 @@
 import React from 'react'
-
+import SnapBar from './SnapBar'
 
 const report = () => {
     return (
+        <div className="contenedor">
+          <SnapBar />
         <center>
         <div className="container">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThLH_jPwFHDjpkazI5TBSylbhyCQANi6ot6iEcjGDJEZLfJ1uytH2ZT9Nj5JurNyA2r6M&usqp=CAU" alt="Avatar" id="1"/>
@@ -43,10 +45,14 @@ const report = () => {
                   float: none;
                   display: block;
                 }
+              .contenedor{
+                background: linear-gradient(to right, #CD6155, #505BDA);
+              }
               }
         `}
         </style>
         </center>
+        </div>
             
     )
   }
