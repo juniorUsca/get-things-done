@@ -245,11 +245,18 @@
                         <viewLayoutGuide key="safeArea" id="ocf-Aj-rHp"/>
                     </view>
                     <navigationItem key="navigationItem" title="Inbox" id="xrw-c1-cnH">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5VX-lh-XAP">
-                            <connections>
-                                <action selector="addTapped:" destination="70E-wf-7cA" id="cla-Ce-l91"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="5VX-lh-XAP">
+                                <connections>
+                                    <action selector="addTapped:" destination="70E-wf-7cA" id="cla-Ce-l91"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Edit" id="v2f-KA-Gf6">
+                                <connections>
+                                    <action selector="editDoneButton:" destination="70E-wf-7cA" id="T6f-jF-KoE"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tablaInbox" destination="SQh-kR-G1s" id="p1q-Ep-K0V"/>
