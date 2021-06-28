@@ -1,18 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SocialContainer from '../SocialContainer'
+import validationRegister from '../validationRegister'
 
 const Register = () => {
+  const [valuesR, setValuesR] = useState({
+    nameRegister: '',
+    emailRegister: '',
+    passwordRegister: '',
+  })
+
+  const [errorsRegister, setErrorsRegister] = useState({})
+
+  const handleChangeRegister = (event) => {
+    setValuesR({
+      ...valuesR,
+      [event.target.name]: event.target.value,
+    })
+  }
+
+  const onSubmitRegister = (event) => {
+    event.preventDefault()
+    setErrorsRegister(validationRegister(valuesR))
+  }
+
   return (
     <div>
       <div className="form-container sign-up-container">
-        <form action="#">
+        <form className="formRegister">
           <h1>Create Account</h1>
           <SocialContainer />
           <span>or use your email for registration</span>
-          <input name="name" type="text" placeholder="Name" />
-          <input name="emailReg" type="email" placeholder="Email" />
-          <input name="passwordReg" type="password" placeholder="Password" />
-          <button type="button" id="sign-up">Sign Up</button>
+          <input name="nameRegister" type="text" placeholder="Name" value={valuesR.nameRegister} onChange={handleChangeRegister} />
+          {errorsRegister.nameRegister && <span style={{ color: 'red', fontSize: 11, fontWeight: 'bold' }}>{errorsRegister.nameRegister}</span>}
+
+          <input name="emailRegister" type="email" placeholder="Email" value={valuesR.emailRegister} onChange={handleChangeRegister} />
+          {errorsRegister.emailRegister && <span style={{ color: 'red', fontSize: 11, fontWeight: 'bold' }}>{errorsRegister.emailRegister}</span>}
+
+          <input name="passwordRegister" type="password" placeholder="Password" value={valuesR.passwordRegister} onChange={handleChangeRegister} />
+          {errorsRegister.passwordRegister && <span style={{ color: 'red', fontSize: 11, fontWeight: 'bold' }}>{errorsRegister.passwordRegister}</span>}
+          <button type="button" id="sign-up" onClick={onSubmitRegister}>Sign Up</button>
         </form>
       </div>
 
