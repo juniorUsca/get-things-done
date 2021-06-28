@@ -14,6 +14,7 @@
 		48A7852E267996E60080B2A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A7852D267996E60080B2A6 /* Assets.xcassets */; };
 		48A78531267996E60080B2A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A7852F267996E60080B2A6 /* LaunchScreen.storyboard */; };
 		48A78539267997DC0080B2A6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48A78538267997DC0080B2A6 /* GoogleService-Info.plist */; };
+		48CF649D26899D14000DBCD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF649C26899D14000DBCD0 /* ViewController.swift */; };
 		D8CFB34B26893CA50017754F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFB34926893CA50017754F /* HomeViewController.swift */; };
 		D8CFB34C26893CA50017754F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFB34A26893CA50017754F /* LogInViewController.swift */; };
 		D8CFB351268943970017754F /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFB350268943970017754F /* InboxViewController.swift */; };
@@ -30,6 +31,7 @@
 		48A78530267996E60080B2A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48A78532267996E60080B2A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48A78538267997DC0080B2A6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		48CF649C26899D14000DBCD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = getThingsDone/ViewControllers/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		6B1FD624D9D0BF63A1538B08 /* Pods_getThingsDone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_getThingsDone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8AA9911CBEAAFFAC3A2876 /* Pods-getThingsDone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getThingsDone.debug.xcconfig"; path = "Target Support Files/Pods-getThingsDone/Pods-getThingsDone.debug.xcconfig"; sourceTree = "<group>"; };
 		D8CFB34926893CA50017754F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = getThingsDone/ViewControllers/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -68,6 +70,7 @@
 				D8CFB34A26893CA50017754F /* LogInViewController.swift */,
 				D8CFB350268943970017754F /* InboxViewController.swift */,
 				D8CFB35A268976ED0017754F /* AñadirInboxViewController.swift */,
+				48CF649C26899D14000DBCD0 /* ViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				D8CFB35726895C680017754F /* Model.xcdatamodeld in Sources */,
 				48A78527267996E60080B2A6 /* SceneDelegate.swift in Sources */,
 				D8CFB34C26893CA50017754F /* LogInViewController.swift in Sources */,
+				48CF649D26899D14000DBCD0 /* ViewController.swift in Sources */,
 				D8CFB34B26893CA50017754F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
