@@ -197,14 +197,91 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ocf-Aj-rHp"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Inbox" id="xrw-c1-cnH"/>
+                    <navigationItem key="navigationItem" title="Inbox" id="xrw-c1-cnH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5VX-lh-XAP">
+                            <connections>
+                                <action selector="addTapped:" destination="70E-wf-7cA" id="cla-Ce-l91"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tablaInbox" destination="SQh-kR-G1s" id="p1q-Ep-K0V"/>
+                        <segue destination="55v-DC-vBD" kind="show" identifier="añadirInboxSegue" id="rMZ-MB-dio"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="07L-Tp-7SA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2530" y="133"/>
+        </scene>
+        <!--Añadir-->
+        <scene sceneID="Lli-dg-jXO">
+            <objects>
+                <viewController id="55v-DC-vBD" customClass="An_adirInboxViewController" customModule="getThingsDone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TfS-BN-bvX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripcion de Inbox" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmw-E9-qvR">
+                                <rect key="frame" x="108" y="220" width="198" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvU-1T-pff">
+                                <rect key="frame" x="57" y="294" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="HZ7-r0-fXy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kEk-nS-xIM">
+                                <rect key="frame" x="182.5" y="432" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9a-SK-7oJ">
+                                <rect key="frame" x="132" y="543" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.76165803104404151" green="0.38213726059585873" blue="0.647720914518924" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="fDN-7r-HVa"/>
+                                </constraints>
+                                <state key="normal" title="Añadir">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="añadirTapped:" destination="55v-DC-vBD" eventType="touchUpInside" id="cQR-fe-RDh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89r-Xq-Etq">
+                                <rect key="frame" x="174" y="358" width="66" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kEk-nS-xIM" firstAttribute="top" secondItem="89r-Xq-Etq" secondAttribute="bottom" constant="50" id="05E-0W-Wh7"/>
+                            <constraint firstItem="Cmw-E9-qvR" firstAttribute="centerX" secondItem="TfS-BN-bvX" secondAttribute="centerX" id="A3p-EY-v1o"/>
+                            <constraint firstItem="i9a-SK-7oJ" firstAttribute="centerX" secondItem="TfS-BN-bvX" secondAttribute="centerX" id="EmR-eq-fVL"/>
+                            <constraint firstItem="89r-Xq-Etq" firstAttribute="top" secondItem="bvU-1T-pff" secondAttribute="bottom" constant="30" id="MQB-LX-hUA"/>
+                            <constraint firstItem="bvU-1T-pff" firstAttribute="centerX" secondItem="TfS-BN-bvX" secondAttribute="centerX" id="PDf-I9-JzY"/>
+                            <constraint firstItem="i9a-SK-7oJ" firstAttribute="top" secondItem="kEk-nS-xIM" secondAttribute="bottom" constant="80" id="WSP-d9-Qo7"/>
+                            <constraint firstItem="Cmw-E9-qvR" firstAttribute="top" secondItem="j3S-Mb-xVB" secondAttribute="top" constant="80" id="d3a-lQ-cyL"/>
+                            <constraint firstItem="kEk-nS-xIM" firstAttribute="centerX" secondItem="TfS-BN-bvX" secondAttribute="centerX" id="kZ0-jQ-cQW"/>
+                            <constraint firstItem="bvU-1T-pff" firstAttribute="top" secondItem="Cmw-E9-qvR" secondAttribute="bottom" constant="50" id="laE-ba-ImY"/>
+                            <constraint firstItem="89r-Xq-Etq" firstAttribute="centerX" secondItem="TfS-BN-bvX" secondAttribute="centerX" id="zBj-uI-8L9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="j3S-Mb-xVB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Añadir" id="5SZ-hA-l2N"/>
+                    <connections>
+                        <outlet property="spnActivo" destination="kEk-nS-xIM" id="7p3-hh-XEV"/>
+                        <outlet property="txtDescripcion" destination="bvU-1T-pff" id="IEa-md-OJ9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Hk-F9-D4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3399" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FRb-8h-H1M">

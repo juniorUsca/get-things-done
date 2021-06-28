@@ -21,6 +21,9 @@ class InboxViewController: UIViewController,UITableViewDelegate, UITableViewData
         }
     }
 
+    @IBAction func addTapped(_ sender: Any) {
+        performSegue(withIdentifier: "añadirInboxSegue", sender: nil)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if inboxs.count == 0 {
             return 1
@@ -34,7 +37,7 @@ class InboxViewController: UIViewController,UITableViewDelegate, UITableViewData
         if inboxs.count == 0{
             cell.textLabel?.text = "No hay nada todavia"
         }else{
-            cell.textLabel?.text = inboxs[indexPath.row].description
+            cell.textLabel?.text = inboxs[indexPath.row].descripcion
         }
         
         return cell
@@ -46,5 +49,9 @@ class InboxViewController: UIViewController,UITableViewDelegate, UITableViewData
         }catch{
             print("Error al leer entidad de CoreData")
         }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let siguienteVC = segue.destination as! An_adirInboxViewController
+        siguienteVC.anteriorVC = self
     }
 }

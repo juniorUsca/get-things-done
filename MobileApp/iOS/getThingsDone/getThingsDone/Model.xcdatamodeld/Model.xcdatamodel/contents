@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Inbox" representedClassName="Inbox" syncable="YES" codeGenerationType="class">
+        <attribute name="activo" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="descripcion" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Inbox" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Inbox" positionX="-63" positionY="-18" width="128" height="88"/>
     </elements>
 </model>
