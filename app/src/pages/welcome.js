@@ -1,38 +1,44 @@
-import Link from 'next/link'
+import React from 'react'
 import SnapBar from './SnapBar'
 
 const welcome = () => {
-    return ( 
-        <div id="Banner">
-            <div className="bg_animate">
+  return (
+    <div id="Banner">
+      <div className="bg_animate">
 
-                <SnapBar/>
+        <SnapBar />
 
-                <section className="banner contenedor">
-                    <secrion className="banner_title">
-                        <h2>Get Things <br/> Done</h2>
-                        <a href="#" className="Iniciar">Iniciar</a>
-                    </secrion>
-                    <div className="banner_img">
-                        <img src="http://pngimg.com/uploads/triangle/triangle_PNG30.png" width="25px" />
-                    </div>
-                </section>
+        <section className="banner contenedor">
+          <secrion className="banner_title">
+            <h2>
+              Get Things
+              <br />
+              {' '}
+              Done
+            </h2>
+            <a href="#I" className="Iniciar">Iniciar</a>
+          </secrion>
+          <div className="banner_img">
+            <img alt="welcome" src="http://pngimg.com/uploads/triangle/triangle_PNG30.png" width="25px" />
+          </div>
+        </section>
 
-                <div className="burbujas">
-                    <div className="burbuja"></div>
-                    <div className="burbuja"></div>
-                    <div className="burbuja"></div>
-                    <div className="burbuja"></div>
-                    <div className="burbuja"></div>
-                    <div className="burbuja"></div>
-                    <div className="burbuja"></div>
-                    <div className="burbuja"></div>
-                    <div className="burbuja"></div>
-                    <div className="burbuja"></div>
-                </div>
-            </div>
+        <div className="burbujas">
+          <div className="burbuja" />
+          <div className="burbuja" />
+          <div className="burbuja" />
+          <div className="burbuja" />
+          <div className="burbuja" />
+          <div className="burbuja" />
+          <div className="burbuja" />
+          <div className="burbuja" />
+          <div className="burbuja" />
+          <div className="burbuja" />
+        </div>
+      </div>
 
-            <style jsx >{`
+      <style jsx>
+        {`
 
                 *{
                     margin: 0;
@@ -263,10 +269,10 @@ const welcome = () => {
                 }
             
             `}
-            </style>
+      </style>
 
-        </div>
-     );
+    </div>
+  )
 }
- 
-export default welcome;
+
+export default welcome

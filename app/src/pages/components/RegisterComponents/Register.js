@@ -1,22 +1,23 @@
 import React from 'react'
-import SocialContainer from '../SocialContainer';
+import SocialContainer from '../SocialContainer'
 
 const Register = () => {
-    return ( 
-        <div>
-            <div className="form-container sign-up-container">
-                <form action="#">
-                    <h1>Create Account</h1>
-                    <SocialContainer />
-                    <span>or use your email for registration</span>
-                    <input name="name" type="text" placeholder="Name" />
-                    <input name="emailReg" type="email" placeholder="Email" />
-                    <input name="passwordReg" type="password" placeholder="Password" />
-                    <button id="sign-up">Sign Up</button>
-                </form>
-            </div>
-            
-                  <style jsx >{`
+  return (
+    <div>
+      <div className="form-container sign-up-container">
+        <form action="#">
+          <h1>Create Account</h1>
+          <SocialContainer />
+          <span>or use your email for registration</span>
+          <input name="name" type="text" placeholder="Name" />
+          <input name="emailReg" type="email" placeholder="Email" />
+          <input name="passwordReg" type="password" placeholder="Password" />
+          <button type="button" id="sign-up">Sign Up</button>
+        </form>
+      </div>
+
+      <style jsx>
+        {`
         
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
         * {
@@ -216,11 +217,9 @@ const Register = () => {
       `}
 
       </style>
-        </div>
-        
+    </div>
 
-        
-    );
+  )
 }
- 
-export default Register;
+
+export default Register

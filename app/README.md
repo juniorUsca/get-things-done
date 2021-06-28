@@ -52,6 +52,89 @@ se verifico que cada login de red social funciona
 
 ![github](https://user-images.githubusercontent.com/67810145/122855731-460f2300-d2db-11eb-9fe7-248b443924be.PNG)
 
+## Firebase Google
+
+Se utiliza firebase para la identificacion de usuarios, por lo cual, firebase permite que una app guarde nuestros datos en la nube de forma segura.
+
+## Firebase Authentication
+
+Se utliza el firebase Authetication por que nos proporciona servicios de backend, SDK sencillos de usar y bibliotecas de IU que estaran ya elaboradas para autenticar los usuarios en nuestra app, ya que con esto admite la autenticacion mediante contraseñas, numeros de telefono, proveedores de identidad federada populares como son "Google", "Facebook" y "Twitter" entre otros más.
+
+## Uso
+
+```python
+import firebase from 'firebase/app';
+import "firebase/analytics";
+import "firebase/auth";
+import "firebase/firestore";
+
+const firebaseConfig = {
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_PUBLIC_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+};
+
+export const loginWithGoogle = () => {
+    const googleProvider = new firebase.auth.GoogleAuthProvider()
+    return firebase.auth().signInWithPopup(googleProvider)
+}
+```
+## Contribucion
+
+Firebase Authentication se integra estrechamente con otros servicios de Firebase y aprovecha estándares de la industria como OAuth 2.0 y OpenID Connect, por lo que se puede integrar con facilidad en tu backend personalizado.
+
 ![google](https://user-images.githubusercontent.com/67810145/122856575-a2267700-d2dc-11eb-8c37-84285feec3ed.PNG)
+
+## Firebase Facebook
+
+Firebase puede integrar el servicio de Acceso con "Facebook" a nuestra app, para permitir que los usuarios se autentiquen con Firebase con sus respectivas cuenta de Facebook.
+
+## Uso
+
+```python
+import firebase from 'firebase/app';
+import "firebase/analytics";
+import "firebase/auth";
+import "firebase/firestore";
+
+const firebaseConfig = {
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_PUBLIC_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+};
+
+export const loginWithFacebook = () => {
+    const facebookbProvider = new firebase.auth.FacebookAuthProvider()
+    return firebase.auth().signInWithPopup(facebookbProvider)
+}
+```
+
+## SDK Facebook Native
+
+En las plataformas nativas, se requiere una biblioteca de terceros para instalar el SDK de Facebook y activar el flujo de autenticación.
+
+Instalacion del flutter_facebook_auth:
+
+## pubspec.yaml
+
+```python
+dependencies:
+  flutter_facebook_auth: "^1.0.0"
+```
+
+## SDK Facebook Web
+
+En la web, el SDK de Firebase brinda soporte para manejar automáticamente el flujo de autenticación usando los detalles de la aplicación de Facebook proporcionados en la consola de Firebase.
+
+## Ejemplo
+
+```python
+FacebookAuthProvider facebookProvider = FacebookAuthProvider();
+
+facebookProvider.addScope('email');
+facebookProvider.setCustomParameters({
+  'display': 'popup',
+});
+```
 
 ![facebook](https://user-images.githubusercontent.com/67810145/122856588-a8b4ee80-d2dc-11eb-8064-7e684ec24c67.PNG)

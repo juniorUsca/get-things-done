@@ -1,17 +1,18 @@
 import React from 'react'
 
-const OverlayLogin = (props) => {
-    return ( 
-        <div>
-            <div className="overlay-panel overlay-right">
-              <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start journey with us</p>
-              <button className="ghost" id="signUp" onClick={props.handleClick}>
-                Sign Up
-              </button>
-            </div>
+const OverlayLogin = ({ handleClick }) => {
+  return (
+    <div>
+      <div className="overlay-panel overlay-right">
+        <h1>Hello, Friend!</h1>
+        <p>Enter your personal details and start journey with us</p>
+        <button type="button" className="ghost" id="signUp" onClick={handleClick}>
+          Sign Up
+        </button>
+      </div>
 
-            <style jsx >{`
+      <style jsx>
+        {`
         
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
         * {
@@ -211,8 +212,8 @@ const OverlayLogin = (props) => {
       `}
 
       </style>
-        </div>
-    );
+    </div>
+  )
 }
- 
-export default OverlayLogin;
+
+export default OverlayLogin

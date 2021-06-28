@@ -1,47 +1,49 @@
-import { Calendar, momentLocalizer } from "react-big-calendar";
-import { messages } from "./calendar-es";
+/* eslint-disable no-underscore-dangle */
+import React from 'react'
+import { Calendar, momentLocalizer } from 'react-big-calendar'
 import moment from 'moment'
+import { messages } from './calendar-es'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
-import { CalendarEvent, eventStyleGetter } from "./CalendarEvent";
+import { CalendarEvent, eventStyleGetter } from './CalendarEvent'
 
 moment.locale('es')
 
 const eventsTemp = [
 
-    {
-        title: "Primer Evento",
-        start: moment('2021-06-23 08:00')._d,
-        end: moment('2021-06-23 11:00')._d,
-        notes:'Descripcion de nota de evento'
-    },
-    {
-        title: "Segundo Evento",
-        start: moment('2021-06-25 08:00')._d,
-        end: moment('2021-06-25 11:00')._d,
-        notes:'Descripcion de nota de evento'
-    },
+  {
+    title: 'Primer Evento',
+    start: moment('2021-06-23 08:00')._d,
+    end: moment('2021-06-23 11:00')._d,
+    notes: 'Descripcion de nota de evento',
+  },
+  {
+    title: 'Segundo Evento',
+    start: moment('2021-06-25 08:00')._d,
+    end: moment('2021-06-25 11:00')._d,
+    notes: 'Descripcion de nota de evento',
+  },
 
 ]
 
+// eslint-disable-next-line no-unused-vars
 const CalendarComponent = ({ events }) => {
+  const localizer = momentLocalizer(moment)
 
-    const localizer = momentLocalizer( moment )
-
-    return(
-        <div className="calendar-screen">
-            <Calendar
-                localizer={localizer}
-                events={eventsTemp}
-                startAccessor="start"
-                endAccessor="end"
-                messages={ messages }
-                eventPropGetter={ eventStyleGetter }
-                components={{
-                    event: CalendarEvent,
-                }}
-            />
-            <style jsx>
-                {`
+  return (
+    <div className="calendar-screen">
+      <Calendar
+        localizer={localizer}
+        events={eventsTemp}
+        startAccessor="start"
+        endAccessor="end"
+        messages={messages}
+        eventPropGetter={eventStyleGetter}
+        components={{
+          event: CalendarEvent,
+        }}
+      />
+      <style jsx>
+        {`
                 .calendar-screen{
                     display: flex;
                     flex-flow: column;
@@ -52,8 +54,8 @@ const CalendarComponent = ({ events }) => {
                     height: 100% !important;
                 }
                 `}
-            </style>
-        </div>
-    )
+      </style>
+    </div>
+  )
 }
 export default CalendarComponent
