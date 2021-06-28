@@ -50,6 +50,34 @@ Geist UI es un sistema de diseño de código abierto para crear sitios web y apl
 
 se verifico que cada login de red social funciona
 
+## Firebase GitHub
+
+Se utiliza firebase para la identificacion de usuarios, por lo cual, firebase permite que una app guarde nuestros datos en la nube de forma segura mediante cuentas creadas por GitHub.
+
+## Firebase Authentication
+
+Se estara utilizando el firebase authentication, ya que nos proporciona servicios de backend, SDK sencillos de usar y bibliotecas de IU que estaran ya elaboradas para autenticar los usuarios en nuestra app, ya que con esto admite la autenticacion
+
+## Uso
+
+```python
+import firebase from 'firebase/app';
+import "firebase/analytics";
+import "firebase/auth";
+import "firebase/firestore";
+
+const firebaseConfig = {
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_PUBLIC_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+};
+
+export const loginWithGitHub = () => {
+    const githubProvider = new firebase.auth.GithubAuthProvider()
+    return firebase.auth().signInWithPopup(githubProvider)
+}
+```
+
 ![github](https://user-images.githubusercontent.com/67810145/122855731-460f2300-d2db-11eb-9fe7-248b443924be.PNG)
 
 ## Firebase Google
