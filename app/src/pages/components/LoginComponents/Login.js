@@ -1,17 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SocialContainer from '../SocialContainer'
+import validation from '../validation'
 
 const Login = () => {
+  const [values, setValues] = useState({
+    email: '',
+    password: '',
+  })
+
+  const [errors, setErrors] = useState({})
+
+  const handleChange = (event) => {
+    setValues({
+      ...values,
+      [event.target.name]: event.target.value,
+    })
+  }
+
+  const onSubmit = (event) => {
+    event.preventDefault()
+    setErrors(validation(values))
+  }
+
   return (
     <div className="form-container sign-in-container">
-      <form action="#">
+      <form className="formLogin">
         <h1>Sign In</h1>
         <SocialContainer />
         <span>or use your account</span>
-        <input name="email" type="email" placeholder="Email" />
-        <input name="password" type="password" placeholder="Password" />
+        <input name="email" type="email" placeholder="Email" value={values.email} onChange={handleChange} />
+        {errors.email && <span className="Texterror">{errors.email}</span>}
+
+        <input name="password" type="password" placeholder="Password" value={values.password} onChange={handleChange} />
+        {errors.password && <span className="Texterror">{errors.password}</span>}
         <a href="/">Forgot your password?</a>
-        <button type="button" id="sign-in">Sign In</button>
+        <button type="submit" id="sign-in" onClick={onSubmit}>Sign In</button>
+
       </form>
 
       <style jsx>
@@ -211,6 +235,11 @@ const Login = () => {
           margin: 0 5px;
           height: 40px;
           width: 40px;
+        }
+        .Texterror {
+          color: red;
+          font-size: 11px;
+          font-weight: bold;
         }
       `}
 
