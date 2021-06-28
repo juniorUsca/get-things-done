@@ -18,6 +18,7 @@
 		D8CFB34C26893CA50017754F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFB34A26893CA50017754F /* LogInViewController.swift */; };
 		D8CFB351268943970017754F /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFB350268943970017754F /* InboxViewController.swift */; };
 		D8CFB35726895C680017754F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8CFB35526895C680017754F /* Model.xcdatamodeld */; };
+		D8CFB35B268976ED0017754F /* AñadirInboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFB35A268976ED0017754F /* AñadirInboxViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		D8CFB34A26893CA50017754F /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = getThingsDone/ViewControllers/LogInViewController.swift; sourceTree = SOURCE_ROOT; };
 		D8CFB350268943970017754F /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InboxViewController.swift; path = getThingsDone/Utils/InboxViewController.swift; sourceTree = SOURCE_ROOT; };
 		D8CFB35626895C680017754F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		D8CFB35A268976ED0017754F /* AñadirInboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AñadirInboxViewController.swift"; path = "getThingsDone/ViewControllers/AñadirInboxViewController.swift"; sourceTree = SOURCE_ROOT; };
 		EDEFF282AB3572A46AFFABD6 /* Pods-getThingsDone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getThingsDone.release.xcconfig"; path = "Target Support Files/Pods-getThingsDone/Pods-getThingsDone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +67,7 @@
 				D8CFB34926893CA50017754F /* HomeViewController.swift */,
 				D8CFB34A26893CA50017754F /* LogInViewController.swift */,
 				D8CFB350268943970017754F /* InboxViewController.swift */,
+				D8CFB35A268976ED0017754F /* AñadirInboxViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			files = (
 				D8CFB351268943970017754F /* InboxViewController.swift in Sources */,
 				48A78525267996E60080B2A6 /* AppDelegate.swift in Sources */,
+				D8CFB35B268976ED0017754F /* AñadirInboxViewController.swift in Sources */,
 				D8CFB35726895C680017754F /* Model.xcdatamodeld in Sources */,
 				48A78527267996E60080B2A6 /* SceneDelegate.swift in Sources */,
 				D8CFB34C26893CA50017754F /* LogInViewController.swift in Sources */,

@@ -8,6 +8,13 @@
 
 import UIKit
 
+class InboxTableViewCell:UITableViewCell{
+    @IBOutlet weak var txtDescripcion: UILabel!
+    @IBOutlet weak var txtNumero: UILabel!
+    @IBOutlet weak var txtFecha: UILabel!
+    @IBOutlet weak var txtTitle: UILabel!
+}
+
 class InboxViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tablaInbox: UITableView!
@@ -21,6 +28,9 @@ class InboxViewController: UIViewController,UITableViewDelegate, UITableViewData
         }
     }
 
+    @IBAction func addTapped(_ sender: Any) {
+        performSegue(withIdentifier: "añadirInboxSegue", sender: nil)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if inboxs.count == 0 {
             return 1
@@ -34,7 +44,20 @@ class InboxViewController: UIViewController,UITableViewDelegate, UITableViewData
         if inboxs.count == 0{
             cell.textLabel?.text = "No hay nada todavia"
         }else{
-            cell.textLabel?.text = inboxs[indexPath.row].description
+            let date = inboxs[indexPath.row].created_at!
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "YY/MM/dd"
+            let fecha = dateFormatter.string(from: date)
+            let cellIn = tableView.dequeueReusableCell(withIdentifier: "inboxCell", for: indexPath) as! InboxTableViewCell
+            cellIn.txtDescripcion.text = inboxs[indexPath.row].descripcion
+            cellIn.txtTitle.text = "Inbox #"+String(indexPath.row+1)
+            cellIn.txtFecha.text =  fecha
+            cellIn.txtNumero.text = String(indexPath.row+1)
+            if !inboxs[indexPath.row].activo{
+                cellIn.txtNumero.backgroundColor = UIColor.red
+            }
+            cellIn.txtNumero.layer.cornerRadius = 5
+            return cellIn
         }
         
         return cell
@@ -46,5 +69,9 @@ class InboxViewController: UIViewController,UITableViewDelegate, UITableViewData
         }catch{
             print("Error al leer entidad de CoreData")
         }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let siguienteVC = segue.destination as! An_adirInboxViewController
+        siguienteVC.anteriorVC = self
     }
 }
