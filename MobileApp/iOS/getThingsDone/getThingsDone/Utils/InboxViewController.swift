@@ -16,6 +16,14 @@ class InboxTableViewCell:UITableViewCell{
 }
 
 class InboxViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+    @IBAction func editDoneButton(_ sender: Any) {
+        if tablaInbox.isEditing{
+            tablaInbox.isEditing = false
+        }
+        else{
+            tablaInbox.isEditing = true
+        }
+    }
     
     @IBOutlet weak var tablaInbox: UITableView!
     var inboxs:[Inbox] = []
@@ -25,7 +33,9 @@ class InboxViewController: UIViewController,UITableViewDelegate, UITableViewData
         tablaInbox.dataSource = self
         cargarInbox(){
             self.tablaInbox.reloadData()
+            
         }
+        tablaInbox.isEditing = false
     }
 
     @IBAction func addTapped(_ sender: Any) {
@@ -39,6 +49,11 @@ class InboxViewController: UIViewController,UITableViewDelegate, UITableViewData
         }
     }
     
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = self.inboxs[sourceIndexPath.row]
+        inboxs.remove(at: sourceIndexPath.row)
+        inboxs.insert(movedObject, at: destinationIndexPath.row)
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         if inboxs.count == 0{
