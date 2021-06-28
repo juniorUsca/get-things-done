@@ -8,24 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		22CF63DB92EF93AF5A092077 /* Pods_getThingsDone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1FD624D9D0BF63A1538B08 /* Pods_getThingsDone.framework */; };
-		481A57F7267999CA001C9018 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481A57F6267999CA001C9018 /* HomeViewController.swift */; };
-		481A57F92679B48D001C9018 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481A57F82679B48D001C9018 /* DesignableView.swift */; };
 		48A78525267996E60080B2A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A78524267996E60080B2A6 /* AppDelegate.swift */; };
 		48A78527267996E60080B2A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A78526267996E60080B2A6 /* SceneDelegate.swift */; };
-		48A78529267996E60080B2A6 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A78528267996E60080B2A6 /* LogInViewController.swift */; };
 		48A7852C267996E60080B2A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A7852A267996E60080B2A6 /* Main.storyboard */; };
 		48A7852E267996E60080B2A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A7852D267996E60080B2A6 /* Assets.xcassets */; };
 		48A78531267996E60080B2A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A7852F267996E60080B2A6 /* LaunchScreen.storyboard */; };
 		48A78539267997DC0080B2A6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48A78538267997DC0080B2A6 /* GoogleService-Info.plist */; };
+		D8CFB34B26893CA50017754F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFB34926893CA50017754F /* HomeViewController.swift */; };
+		D8CFB34C26893CA50017754F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFB34A26893CA50017754F /* LogInViewController.swift */; };
+		D8CFB351268943970017754F /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFB350268943970017754F /* InboxViewController.swift */; };
+		D8CFB35426894CAE0017754F /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CFB35326894CAE0017754F /* Inbox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		481A57F6267999CA001C9018 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		481A57F82679B48D001C9018 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		48A78521267996E60080B2A6 /* getThingsDone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = getThingsDone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A78524267996E60080B2A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48A78526267996E60080B2A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		48A78528267996E60080B2A6 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		48A7852B267996E60080B2A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48A7852D267996E60080B2A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48A78530267996E60080B2A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -33,6 +31,10 @@
 		48A78538267997DC0080B2A6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6B1FD624D9D0BF63A1538B08 /* Pods_getThingsDone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_getThingsDone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8AA9911CBEAAFFAC3A2876 /* Pods-getThingsDone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getThingsDone.debug.xcconfig"; path = "Target Support Files/Pods-getThingsDone/Pods-getThingsDone.debug.xcconfig"; sourceTree = "<group>"; };
+		D8CFB34926893CA50017754F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = getThingsDone/ViewControllers/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		D8CFB34A26893CA50017754F /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = getThingsDone/ViewControllers/LogInViewController.swift; sourceTree = SOURCE_ROOT; };
+		D8CFB350268943970017754F /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InboxViewController.swift; path = getThingsDone/Utils/InboxViewController.swift; sourceTree = SOURCE_ROOT; };
+		D8CFB35326894CAE0017754F /* Inbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
 		EDEFF282AB3572A46AFFABD6 /* Pods-getThingsDone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-getThingsDone.release.xcconfig"; path = "Target Support Files/Pods-getThingsDone/Pods-getThingsDone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +62,9 @@
 		481A57F52679994B001C9018 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D8CFB34926893CA50017754F /* HomeViewController.swift */,
+				D8CFB34A26893CA50017754F /* LogInViewController.swift */,
+				D8CFB350268943970017754F /* InboxViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -85,17 +90,15 @@
 		48A78523267996E60080B2A6 /* getThingsDone */ = {
 			isa = PBXGroup;
 			children = (
+				D8CFB35226894C510017754F /* Modelos */,
 				481A57F52679994B001C9018 /* ViewController */,
 				48A78538267997DC0080B2A6 /* GoogleService-Info.plist */,
 				48A78524267996E60080B2A6 /* AppDelegate.swift */,
 				48A78526267996E60080B2A6 /* SceneDelegate.swift */,
-				48A78528267996E60080B2A6 /* LogInViewController.swift */,
-				481A57F82679B48D001C9018 /* DesignableView.swift */,
 				48A7852A267996E60080B2A6 /* Main.storyboard */,
 				48A7852D267996E60080B2A6 /* Assets.xcassets */,
 				48A7852F267996E60080B2A6 /* LaunchScreen.storyboard */,
 				48A78532267996E60080B2A6 /* Info.plist */,
-				481A57F6267999CA001C9018 /* HomeViewController.swift */,
 			);
 			path = getThingsDone;
 			sourceTree = "<group>";
@@ -106,6 +109,14 @@
 				6B1FD624D9D0BF63A1538B08 /* Pods_getThingsDone.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8CFB35226894C510017754F /* Modelos */ = {
+			isa = PBXGroup;
+			children = (
+				D8CFB35326894CAE0017754F /* Inbox.swift */,
+			);
+			path = Modelos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,11 +235,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48A78529267996E60080B2A6 /* LogInViewController.swift in Sources */,
+				D8CFB35426894CAE0017754F /* Inbox.swift in Sources */,
+				D8CFB351268943970017754F /* InboxViewController.swift in Sources */,
 				48A78525267996E60080B2A6 /* AppDelegate.swift in Sources */,
 				48A78527267996E60080B2A6 /* SceneDelegate.swift in Sources */,
-				481A57F92679B48D001C9018 /* DesignableView.swift in Sources */,
-				481A57F7267999CA001C9018 /* HomeViewController.swift in Sources */,
+				D8CFB34C26893CA50017754F /* LogInViewController.swift in Sources */,
+				D8CFB34B26893CA50017754F /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

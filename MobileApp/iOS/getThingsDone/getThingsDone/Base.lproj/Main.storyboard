@@ -143,6 +143,20 @@
                     <view key="view" contentMode="scaleToFill" id="svf-uY-E3Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfn-hX-LQO">
+                                <rect key="frame" x="47" y="178" width="134" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.32156170971507858" green="0.63321293886049268" blue="0.88082901554404147" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Inbox">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="InboxTapped:" destination="lRI-sV-0pa" eventType="touchUpInside" id="Hef-b3-Z6R"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="IVP-gH-GT5"/>
                     </view>
@@ -153,10 +167,44 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="70E-wf-7cA" kind="show" identifier="inboxSegue" id="7HP-Gu-2lo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DxO-k2-feA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1726.0869565217392" y="132.58928571428572"/>
+        </scene>
+        <!--Inbox-->
+        <scene sceneID="SvW-n1-GBK">
+            <objects>
+                <viewController id="70E-wf-7cA" customClass="InboxViewController" customModule="getThingsDone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j1t-9G-U45">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SQh-kR-G1s">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SQh-kR-G1s" firstAttribute="leading" secondItem="ocf-Aj-rHp" secondAttribute="leading" id="IJt-4g-NL0"/>
+                            <constraint firstItem="ocf-Aj-rHp" firstAttribute="trailing" secondItem="SQh-kR-G1s" secondAttribute="trailing" id="Izz-G0-F5k"/>
+                            <constraint firstItem="SQh-kR-G1s" firstAttribute="top" secondItem="ocf-Aj-rHp" secondAttribute="top" id="ehh-SR-U3Z"/>
+                            <constraint firstItem="ocf-Aj-rHp" firstAttribute="bottom" secondItem="SQh-kR-G1s" secondAttribute="bottom" id="sHB-Xg-iXK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ocf-Aj-rHp"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Inbox" id="xrw-c1-cnH"/>
+                    <connections>
+                        <outlet property="tablaInbox" destination="SQh-kR-G1s" id="p1q-Ep-K0V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="07L-Tp-7SA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2530" y="133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FRb-8h-H1M">
