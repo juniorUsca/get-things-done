@@ -12,6 +12,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from './../screens/Login';
 import Signup from './../screens/Signup';
 import Welcome from './../screens/Welcome';
+import Inbox from './../screens/Inbox';
 
 const Stack = createStackNavigator();
 
@@ -26,14 +27,8 @@ const RootStack = () => {
           <Stack.Navigator
             screenOptions={{
               headerStyle: {
-                backgroundColor: 'transparent',
-              },
-              headerTintColor: tertiary,
-              headerTransparent: true,
-              headerTitle: '',
-              headerLeftContainerStyle: {
-                paddingLeft: 20,
-              },
+                backgroundColor: brand,
+              }, headerTitleAlign:'center'
             }}
           >
              {storedCredentials ? (
@@ -44,6 +39,18 @@ const RootStack = () => {
                 }}
                 name="Welcome"
                 component={Welcome}
+              />
+              <Stack.Screen
+                options={{
+                  headerTitle:"Inbox",
+                  headerTintColor: 'black',
+                  headerTitleStyle:{
+                      fontWeight:'bold'
+                  },
+                  headerPressColorAndroid: brand,
+                }}
+                name="Inbox"
+                component={Inbox}
               />
               </>
               

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { StatusBar } from 'expo-status-bar';
+import { ImageBackground} from 'react-native'
 
 import {
   Avatar,
@@ -43,6 +44,13 @@ const Welcome = ({ navigation }) => {
   return (
     <>
       <StatusBar style="light" />
+      <ImageBackground 
+          source={{uri: 'https://i.pinimg.com/564x/f7/22/21/f7222149a9af8b6f1728a72ff8a78f75.jpg'}}
+          style={{ flex: 1,
+            width: null,
+            height: null,
+            }}
+        >
       <InnerContainer>
         <WelcomeImage resizeMode="cover" source={require('./../assets/img/welcome-bg.png')} />
 
@@ -53,8 +61,9 @@ const Welcome = ({ navigation }) => {
           <StyledFormArea>
             <Avatar resizeMode="cover" source={AvatarImg} />
             <Line />
-            <StyledButton style={{backgroundColor:"#3D91DE"}}>
-              <ButtonText>Go to Inbox</ButtonText>
+            <StyledButton style={{backgroundColor:"#3D91DE"}} 
+            onPress={() => navigation.navigate('Inbox')}>
+              <ButtonText >Go to Inbox</ButtonText>
             </StyledButton>
              <StyledButton onPress={clearLogin}>
               <ButtonText>Logout</ButtonText>
@@ -62,6 +71,7 @@ const Welcome = ({ navigation }) => {
           </StyledFormArea>
         </WelcomeContainer>
       </InnerContainer>
+      </ImageBackground>
     </>
   );
 };
