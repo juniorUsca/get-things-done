@@ -1,5 +1,9 @@
 # Get Things Done
 
+Enlace de la aplicación: 
+
+http://52.0.87.4:3000
+
 Proyecto basado en el video de Jaime Altozano
 
 https://www.twitch.tv/videos/606090769
