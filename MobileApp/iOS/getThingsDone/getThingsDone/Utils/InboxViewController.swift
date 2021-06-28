@@ -40,19 +40,11 @@ class InboxViewController: UIViewController,UITableViewDelegate, UITableViewData
         return cell
     }
     func cargarInbox(completed: @escaping () -> ()) {
-        let url = URL(string: "http://localhost:3001/api/inbox/all")
-        URLSession.shared.dataTask(with: url!){
-            (data,response,error) in
-            if error == nil{
-                do{
-                    self.inboxs = try JSONDecoder().decode([Inbox].self,from:data!)
-                    DispatchQueue.main.async{
-                        completed()
-                    }
-                }catch{
-                    print("Error en JSON")
-                }
-            }
-        }.resume()
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do{
+            inboxs = try context.fetch(Inbox.fetchRequest()) as! [Inbox]
+        }catch{
+            print("Error al leer entidad de CoreData")
+        }
     }
 }
