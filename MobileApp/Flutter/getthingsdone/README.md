@@ -30,6 +30,7 @@ Para poder crear una aplicación en fluter se usa el siguiente comando:
 Se debe tener en cuenta que para el nombre del aplicativo este solo debe tener letras en minusculas, ya que no te permite el uso de mayusculas ni de caracteres especiales.
 ## helpers 
 - [Login Firebase y google](https://firebase.flutter.dev/docs/auth/social)
+- [Login con Auth mediante Facebook](https://pub.dev/packages/flutter_facebook_login)
 - [keytool no se reconoce como un comando...](https://es.stackoverflow.com/questions/93157/keytool-no-se-reconoce-como-un-comando-interno-o-externo-programa-o-archivo-p)
 - [Agregar firebase a un proyecto Flutter](https://firebase.google.com/docs/android/setup?hl=es#java)
 ## Dpendencias 
